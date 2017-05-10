@@ -1,0 +1,9 @@
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.exe.config
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.frmChessKing.resources
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.Properties.Resources.resources
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.pdb
