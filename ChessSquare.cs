@@ -136,7 +136,8 @@ namespace ChessKing
 				{
 					if (this.Chess.Team == (int)ColorTeam.White)
 					{
-						this.ChangeTurn(); 
+						this.ChangeTurn();
+						this.BestValue(ref Common.Board);
 					}
 					else
 						return;
@@ -144,6 +145,7 @@ namespace ChessKing
 				else
 				{
 					this.ChangeTurn();
+					this.BestValue(ref Common.Board);
 				}
 			}
 			else
@@ -153,6 +155,7 @@ namespace ChessKing
 					if (this.Chess.Team == (int)ColorTeam.Black)
 					{
 						this.ChangeTurn();
+						this.BestValue(ref Common.Board);
 					}
 					else
 						return;
@@ -160,6 +163,7 @@ namespace ChessKing
 				else
 				{
 					this.ChangeTurn();
+					this.BestValue(ref Common.Board);
 				}
 			}
 		}
@@ -197,12 +201,14 @@ namespace ChessKing
 				{
 					if (Common.CanEat.Contains(this))//inside list Can EAT
 					{
+						this.Chess.IsDie = true;
 						//hide the way can move and can eat
 						for (int i = 0; i < Common.CanMove.Count; i++)
 						{
 							Common.CanMove[i].Image = null;
 						}
-						this.Image = Common.Board[Common.RowSelected, Common.ColSelected].Image; 
+						this.Image = Common.Board[Common.RowSelected, Common.ColSelected].Image;
+						
 						Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
 						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
 						BackChessBoard();
@@ -285,6 +291,22 @@ namespace ChessKing
 				Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
 				this.BackChessBoard();
 			}
+		}
+
+		public int BestValue(ref ChessSquare[,] board)
+		{
+			int Val=0;
+			for(int i=0 ;i<8 ;i++)
+			{
+				for(int j=0; j<8; j++)
+				{
+					if(board[i, j].Chess != null)
+					{
+						Val += board[i, j].Chess.Evaluation;
+					}
+				}
+			}
+			return Val;
 		}
 	}
 }
