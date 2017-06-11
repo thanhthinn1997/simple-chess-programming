@@ -72,7 +72,20 @@ namespace ChessKing
 			}
 		}
 
-		public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
+        private int evaluation;
+        public int Evaluation
+        {
+            get
+            {
+                return evaluation;
+            }
+            set
+            {
+                evaluation = value;
+            }
+        }
+
+        public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
 
 		}

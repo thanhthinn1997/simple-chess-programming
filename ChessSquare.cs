@@ -107,9 +107,12 @@ namespace ChessKing
 			this.FlatAppearance.BorderSize = 0;
 		}
 
+        private List<ChessSquare[,]> avalBoard;
+
 		protected override void OnClick(EventArgs e)
 		{
-			if (Common.RowSelected == this.Row && Common.ColSelected == this.Col ) //squares click itsefl for 2 time, hide the way and return old background
+
+			if (Common.RowSelected == this.Row && Common.ColSelected == this.Col ) //squares click itself for 2 time, hide the way and return old background
 			{
 				Common.IsSelectedSquare = false; //selected yet
 				for (int i = 0; i < Common.CanMove.Count; i++)
@@ -129,22 +132,30 @@ namespace ChessKing
 				return; 
 			}
 
-			//create turn for 2 team, white go fist
+            //Mode = true is 2 player, Mode = false is 1 player
 			if (Common.IsTurn % 2 == 0)
 			{
-				if (Common.IsSelectedSquare == false)
-				{
-					if (this.Chess.Team == (int)ColorTeam.White)
-					{
-						this.ChangeTurn(); 
-					}
-					else
-						return;
-				}
-				else
-				{
-					this.ChangeTurn();
-				}
+                //create turn for 2 team, white go first
+                if (Common.IsMode == true)
+                {
+                    if (Common.IsSelectedSquare == false)
+                    {
+                        if (this.Chess.Team == (int)ColorTeam.White)
+                        {
+                            this.ChangeTurn();
+                        }
+                        else
+                            return;
+                    }
+                    else
+                    {
+                        this.ChangeTurn();
+                    }
+                }
+                else
+                {
+                    this.minimaxRoot();
+                }
 			}
 			else
 			{
@@ -163,6 +174,70 @@ namespace ChessKing
 				}
 			}
 		}
+
+        protected void minimaxRoot()
+        {
+            int depth = 2;
+            int value = -9999;
+            bool isMax = true;
+            ChessSquare[,] temp = new ChessSquare[8, 8];
+            ChessSquare[,] bestMove = new ChessSquare[8, 8];
+            temp = Common.Board;
+            this.createList(ref temp , 1, avalBoard);
+            //coding minimax in here; //having this minimax(depth-1, nowBoard, !isMax);
+
+            Common.Board = bestMove;
+            Common.IsTurn++;
+        }
+
+        List<ChessSquare[,]> tempList;
+
+        protected int minimax(int depth, ref ChessSquare[,] root, bool isMax)
+        {
+            int team = 0;
+            if (isMax == true) team = 1;
+            else team = 2;
+
+            if (depth == 0) return -this.BestValue(ref root);
+
+            //make list can move from root
+            createList(ref root, team, tempList);
+
+            //your code is here lol...
+        }
+
+        protected void createList(ref ChessSquare[,] temp, int team, List<ChessSquare[,] > listRoot)
+        {
+            ChessSquare[,] tempA = new ChessSquare[8, 8];
+            int tempRow, tempCol;
+            for (int row = 0; row < 8; row++)
+            {
+                for(int col = 0; col < 8; col++)
+                {
+                    if(temp[row,col].Chess.Team == team)
+                    {
+                        temp[row,col].Chess.FindWay(ref temp, row, col);
+                        if(Common.CanMove.Count != 0)
+                        {
+                            for(int i = 0; i < Common.CanMove.Count; i++)
+                            {
+                                tempA = temp;
+                                tempRow = Common.CanMove[i].row;
+                                tempCol = Common.CanMove[i].col;
+                                tempA[tempRow, tempCol].Image = temp[row, col].Image;
+                                tempA[tempRow, tempCol].Chess = temp[row, col].Chess;
+                                tempA[row, col].Image = null;
+                                tempA[row, col].Chess = null;
+
+                                listRoot.Add(tempA);
+                            }
+                            Common.CanMove.Clear();
+                            Common.CanEat.Clear();
+                        }
+                    }
+                }
+            }
+        }
 
 		protected void ChangeTurn()
 		{
@@ -286,6 +361,22 @@ namespace ChessKing
 				this.BackChessBoard();
 			}
 		}
-	}
+
+        public int BestValue(ref ChessSquare[,] board)
+        {
+            int Val = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (board[i, j].Chess != null)
+                    {
+                        Val += board[i, j].Chess.Evaluation;
+                    }
+                }
+            }
+            return Val;
+        }
+    }
 }
  
