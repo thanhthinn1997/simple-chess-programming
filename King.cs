@@ -13,7 +13,7 @@ namespace ChessKing
 
 		public King()
 		{
-			this.IsKing = true;
+			this.isKing = true;
 		}
 
 		public override void FindWay(ref ChessSquare[,] board, int row, int col)

@@ -10,8 +10,7 @@ namespace ChessKing
 {
 	class Knight : Chess
 	{
-        //done
-		string linkPoint = "Image\\circle.png";
+        string linkPoint = "Image\\circle.png";
 		public override void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
 			//row-2

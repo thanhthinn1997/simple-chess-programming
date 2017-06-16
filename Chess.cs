@@ -55,21 +55,17 @@ namespace ChessKing
 			}
 		}
 
-		private bool isKing = false;
-
-		/// <summary>
-		/// color of chess
-		/// </summary>
+        protected bool isKing = false;
 		public bool IsKing
 		{
-			get
-			{
-				return isKing;
-			}
-			set
-			{
-				isKing = value;
-			}
+            get
+            {
+                return isKing;
+            }
+            set
+            {
+                isKing = value;
+            }
 		}
 
         private int evaluation;

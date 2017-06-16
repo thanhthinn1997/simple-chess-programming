@@ -70,28 +70,35 @@ namespace ChessKing
 			{
 				for (int col = 0; col < 8; col++)
 				{
-					if (row % 2 == 0)
-					{
-						if (col % 2 == 0)
-						{
-							Common.Board[row, col].BackColor = Color.NavajoWhite;
-						}
-						else
-						{
-							Common.Board[row, col].BackColor = Color.SaddleBrown;
-						}
-					}
-					else
-					{
-						if (col % 2 == 0)
-						{
-							Common.Board[row, col].BackColor = Color.SaddleBrown;
-						}
-						else
-						{
-							Common.Board[row, col].BackColor = Color.NavajoWhite;
-						}
-					}
+                    if (Common.Board[row, col].BackColor == Color.Blue && Common.Board[row, col].Chess != null && Common.Board[row, col].Chess.IsKing == true)
+                    {
+                        //do nothing
+                    }
+                    else
+                    {
+                        if (row % 2 == 0)
+                        {
+                            if (col % 2 == 0)
+                            {
+                                Common.Board[row, col].BackColor = Color.NavajoWhite;
+                            }
+                            else
+                            {
+                                Common.Board[row, col].BackColor = Color.SaddleBrown;
+                            }
+                        }
+                        else
+                        {
+                            if (col % 2 == 0)
+                            {
+                                Common.Board[row, col].BackColor = Color.SaddleBrown;
+                            }
+                            else
+                            {
+                                Common.Board[row, col].BackColor = Color.NavajoWhite;
+                            }
+                        }
+                    }
 				}
 			}
 		}
@@ -117,9 +124,9 @@ namespace ChessKing
 				Common.IsSelectedSquare = false; //selected yet
 				for (int i = 0; i < Common.CanMove.Count; i++)
 				{
-					Common.CanMove[i].Image = null;
+					if(Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
 				}
-					BackChessBoard();
+			    this.BackChessBoard();
 				this.BackColor = Common.OldBackGround;
 				Common.CanMove.Clear();
 				Common.RowSelected = -1;
@@ -264,7 +271,6 @@ namespace ChessKing
 			else
 			{
 				Common.IsSelectedSquare = false;
-				Common.BackGroundEat = Common.Board[Common.RowSelected, Common.ColSelected].BackColor;//keep backgroundcolor of square can die
 				if (Common.CanMove.Contains(this))//inside list Can EAT
 				{
                     for(int i = 0; i < Common.CanMove.Count; i++)
@@ -281,11 +287,31 @@ namespace ChessKing
 
 					Common.IsTurn++; //change turn
 					Common.CanMove.Clear();
-					}
-					else //not inside caneat list
-					{
-                           //do nothing;
-					}
+
+                    //check if King is danger
+                    this.Chess.FindWay(ref Common.Board, this.row, this.col);
+                    this.BackChessBoard();
+                    for (int i = 0; i < Common.CanMove.Count; i++)
+                    {
+                        if (Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
+                        else
+                        {
+                            if (Common.CanMove[i].Chess.IsKing == true) Common.CanMove[i].BackColor = Color.Blue;
+                        }
+                        
+                    }
+                    Common.CanMove.Clear();
+                }
+				else //not inside caneat list
+				{
+                    Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
+                    for (int i = 0; i < Common.CanMove.Count; i++)
+                    {
+                        if (Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
+                    }
+                    this.BackChessBoard();
+                    Common.CanMove.Clear();
+                }
 			}
 		}
 

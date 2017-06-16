@@ -7,9 +7,9 @@ using System.Drawing;
 
 namespace ChessKing
 {
-	class Queen : Chess
-	{
-		string linkPoint = "Image\\circle.png";
+    class Queen : Chess
+    {
+        string linkPoint = "Image\\circle.png";
 		public override void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
 			//move like castle

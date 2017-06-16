@@ -9,7 +9,7 @@ namespace ChessKing
 {
 	class Pawn : Chess
 	{
-		string linkPoint = "Image\\circle.png";
+        string linkPoint = "Image\\circle.png";
 		public override void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
 			//check mau -> xet quan co di tu duoi len

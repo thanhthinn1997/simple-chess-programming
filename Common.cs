@@ -17,7 +17,6 @@ namespace ChessKing
 		static public int ColSelected =-1; //set value =-1, not in chessboard
 
 		static public Color OldBackGround;//keep back ground before change to violet
-		static public Color BackGroundEat;//keep back ground before change to red
 
 	}
 }
