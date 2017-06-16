@@ -10,6 +10,7 @@ namespace ChessKing
 {
 	class Knight : Chess
 	{
+        //done
 		string linkPoint = "Image\\circle.png";
 		public override void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
@@ -29,7 +30,7 @@ namespace ChessKing
 						if (this.Team != board[row - 2, col - 1].Chess.Team)
 						{
 							board[row - 2, col - 1].BackColor = Color.Red;
-							Common.CanEat.Add(board[row - 2, col - 1]);
+							Common.CanMove.Add(board[row - 2, col - 1]);
 						}
 						else
 						{
@@ -53,7 +54,7 @@ namespace ChessKing
 						if (this.Team != board[row - 2, col + 1].Chess.Team)
 						{
 							board[row - 2, col + 1].BackColor = Color.Red;
-							Common.CanEat.Add(board[row - 2, col + 1]);
+							Common.CanMove.Add(board[row - 2, col + 1]);
 						}
 						else
 						{
@@ -81,7 +82,7 @@ namespace ChessKing
 						if (this.Team != board[row - 1, col - 2].Chess.Team)
 						{
 							board[row - 1, col - 2].BackColor = Color.Red;
-							Common.CanEat.Add(board[row - 1, col - 2]);
+							Common.CanMove.Add(board[row - 1, col - 2]);
 						}
 						else
 						{
@@ -105,7 +106,7 @@ namespace ChessKing
 						if (this.Team != board[row - 1, col + 2].Chess.Team)
 						{
 							board[row - 1, col + 2].BackColor = Color.Red;
-							Common.CanEat.Add(board[row - 1, col + 2]);
+							Common.CanMove.Add(board[row - 1, col + 2]);
 						}
 						else
 						{
@@ -133,7 +134,7 @@ namespace ChessKing
 						if (this.Team != board[row + 2, col - 1].Chess.Team)
 						{
 							board[row + 2, col - 1].BackColor = Color.Red;
-							Common.CanEat.Add(board[row + 2, col - 1]);
+							Common.CanMove.Add(board[row + 2, col - 1]);
 						}
 						else
 						{
@@ -157,7 +158,7 @@ namespace ChessKing
 						if (this.Team != board[row + 2, col + 1].Chess.Team)
 						{
 							board[row + 2, col + 1].BackColor = Color.Red;
-							Common.CanEat.Add(board[row + 2, col + 1]);
+							Common.CanMove.Add(board[row + 2, col + 1]);
 						}
 						else
 						{
@@ -185,7 +186,7 @@ namespace ChessKing
 						if (this.Team != board[row + 1, col - 2].Chess.Team)
 						{
 							board[row + 1, col - 2].BackColor = Color.Red;
-							Common.CanEat.Add(board[row + 1, col - 2]);
+							Common.CanMove.Add(board[row + 1, col - 2]);
 						}
 						else
 						{
@@ -209,7 +210,7 @@ namespace ChessKing
 						if (this.Team != board[row + 1, col + 2].Chess.Team)
 						{
 							board[row + 1, col + 2].BackColor = Color.Red;
-							Common.CanEat.Add(board[row + 1, col + 2]);
+							Common.CanMove.Add(board[row + 1, col + 2]);
 						}
 						else
 						{

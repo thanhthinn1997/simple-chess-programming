@@ -28,7 +28,7 @@ namespace ChessKing
 					if (this.Team != board[row, j].Chess.Team)
 					{
 						board[row, j].BackColor = Color.Red;
-						Common.CanEat.Add(board[row, j]);
+						Common.CanMove.Add(board[row, j]);
 					}
 					else
 					{ 
@@ -51,7 +51,7 @@ namespace ChessKing
 					if (this.Team != board[row, j].Chess.Team)
 					{
 						board[row, j].BackColor = Color.Red;
-						Common.CanEat.Add(board[row, j]);
+						Common.CanMove.Add(board[row, j]);
 					}
 					else
 					{
@@ -73,7 +73,7 @@ namespace ChessKing
 					if (this.Team != board[i, col].Chess.Team)
 					{
 						board[i, col].BackColor = Color.Red;
-						Common.CanEat.Add(board[i, col]);
+						Common.CanMove.Add(board[i, col]);
 					}
 					else
 					{
@@ -95,7 +95,7 @@ namespace ChessKing
 					if (this.Team != board[i, col].Chess.Team)
 					{
 						board[i, col].BackColor = Color.Red;
-						Common.CanEat.Add(board[i, col]);
+						Common.CanMove.Add(board[i, col]);
 					}
 					else
 					{

@@ -121,7 +121,6 @@ namespace ChessKing
 				}
 					BackChessBoard();
 				this.BackColor = Common.OldBackGround;
-				Common.CanEat.Clear();//clear list
 				Common.CanMove.Clear();
 				Common.RowSelected = -1;
 				Common.ColSelected = -1;
@@ -192,7 +191,7 @@ namespace ChessKing
 
         List<ChessSquare[,]> tempList;
 
-        protected int minimax(int depth, ref ChessSquare[,] root, bool isMax)
+        /*protected int minimax(int depth, ref ChessSquare[,] root, bool isMax)
         {
             int team = 0;
             if (isMax == true) team = 1;
@@ -204,7 +203,7 @@ namespace ChessKing
             createList(ref root, team, tempList);
 
             //your code is here lol...
-        }
+        }*/
 
         protected void createList(ref ChessSquare[,] temp, int team, List<ChessSquare[,] > listRoot)
         {
@@ -232,7 +231,6 @@ namespace ChessKing
                                 listRoot.Add(tempA);
                             }
                             Common.CanMove.Clear();
-                            Common.CanEat.Clear();
                         }
                     }
                 }
@@ -270,7 +268,7 @@ namespace ChessKing
 				//eat
 				if (Common.Board[Row, Col].Chess != null)
 				{
-					if (Common.CanEat.Contains(this))//inside list Can EAT
+					if (Common.CanMove.Contains(this))//inside list Can EAT
 					{
 						//hide the way can move and can eat
 						for (int i = 0; i < Common.CanMove.Count; i++)
@@ -282,27 +280,11 @@ namespace ChessKing
 						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
 						BackChessBoard();
 
-						//Check end game
-						if (this.Chess.IsKing)
-						{
-							if (this.Chess.Team == (int)ColorTeam.Black)
-							{
-								MessageBox.Show("The White Team Win!!!");
-							}
-							else
-							{
-								MessageBox.Show("The Black Team Win!!!");
-							}
-						}
-						else
-						{ }
-
 						this.Chess = Common.Board[Common.RowSelected, Common.ColSelected].Chess;
 						Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
 						Common.IsSelectedSquare = false;////
 
 						Common.IsTurn++; //change turn
-						Common.CanEat.Clear();//clear list
 						Common.CanMove.Clear();
 					}
 					else //not inside caneat list
@@ -315,7 +297,6 @@ namespace ChessKing
 						}
 						BackChessBoard();
 						Common.CanMove.Clear();
-						Common.CanEat.Clear();
 					}
 				
 				}
@@ -338,7 +319,6 @@ namespace ChessKing
 
 						Common.IsTurn++;
 						Common.CanMove.Clear();
-						Common.CanEat.Clear();
 					}
 					else
 					{
@@ -350,7 +330,6 @@ namespace ChessKing
 						}
 						BackChessBoard();
 						Common.CanMove.Clear();
-						Common.CanEat.Clear();
 					}
 				}
 			}
