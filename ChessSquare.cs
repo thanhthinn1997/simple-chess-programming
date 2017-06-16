@@ -241,18 +241,18 @@ namespace ChessKing
 		{
 			//select yet
 			if (Common.IsSelectedSquare == false) 
-			{
-				Common.IsSelectedSquare = true; //selected
-
+			{ 
 				//check square is not Empty 
 				if (this.Chess != null)
 				{
-					Common.OldBackGround = Common.Board[Row, Col].BackColor; //keep background color of chess square 
-					this.Chess.FindWay(ref Common.Board, Row, Col); //findway can move and eat
+                    Common.IsSelectedSquare = true;
+
+                    Common.OldBackGround = Common.Board[this.row, this.col].BackColor; //keep background color of chess square 
+                    this.Chess.FindWay(ref Common.Board, this.row, this.col); //findway can move and eat
 					this.findWayAction(); 
 					this.BackColor = System.Drawing.Color.Violet; //change background to violet
-					Common.RowSelected = Row; //keep the row
-					Common.ColSelected = Col; //keep the col
+					Common.RowSelected = this.row; //keep the row
+                    Common.ColSelected = this.col; //keep the col
 
 				}
 				else
@@ -265,79 +265,27 @@ namespace ChessKing
 			{
 				Common.IsSelectedSquare = false;
 				Common.BackGroundEat = Common.Board[Common.RowSelected, Common.ColSelected].BackColor;//keep backgroundcolor of square can die
-				//eat
-				if (Common.Board[Row, Col].Chess != null)
+				if (Common.CanMove.Contains(this))//inside list Can EAT
 				{
-					if (Common.CanMove.Contains(this))//inside list Can EAT
-					{
-						//hide the way can move and can eat
-						for (int i = 0; i < Common.CanMove.Count; i++)
-						{
-							Common.CanMove[i].Image = null;
-						}
-						this.Image = Common.Board[Common.RowSelected, Common.ColSelected].Image; 
-						Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
-						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
-						BackChessBoard();
+                    for(int i = 0; i < Common.CanMove.Count; i++)
+                    {
+                        if (Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
+                    }
+					this.Image = Common.Board[Common.RowSelected, Common.ColSelected].Image; 
+					Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
+					Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
+					this.BackChessBoard();
 
-						this.Chess = Common.Board[Common.RowSelected, Common.ColSelected].Chess;
-						Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
-						Common.IsSelectedSquare = false;////
+					this.Chess = Common.Board[Common.RowSelected, Common.ColSelected].Chess;
+				    Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
 
-						Common.IsTurn++; //change turn
-						Common.CanMove.Clear();
+					Common.IsTurn++; //change turn
+					Common.CanMove.Clear();
 					}
 					else //not inside caneat list
 					{
-						Common.IsSelectedSquare = false;
-						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;//return back ground color after change to violet
-						for (int i = 0; i < Common.CanMove.Count; i++)
-						{
-							Common.CanMove[i].Image = null;
-						}
-						BackChessBoard();
-						Common.CanMove.Clear();
+                           //do nothing;
 					}
-				
-				}
-				else
-				{
-					//move
-					if (Common.CanMove.Contains(this))//compare
-					{
-						for (int i = 0; i < Common.CanMove.Count; i++)
-						{
-							Common.CanMove[i].Image = null;
-						}
-						BackChessBoard();
-						this.Image = Common.Board[Common.RowSelected, Common.ColSelected].Image; 
-						this.Chess = Common.Board[Common.RowSelected, Common.ColSelected].Chess;
-						Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
-						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
-						Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
-						Common.IsSelectedSquare = false;/////
-
-						Common.IsTurn++;
-						Common.CanMove.Clear();
-					}
-					else
-					{
-						Common.IsSelectedSquare = false;
-						Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
-						for (int i = 0; i < Common.CanMove.Count; i++)
-						{
-							Common.CanMove[i].Image = null;
-						}
-						BackChessBoard();
-						Common.CanMove.Clear();
-					}
-				}
-			}
-
-			if (Common.IsSelectedSquare == false)
-			{
-				Common.Board[Common.RowSelected, Common.ColSelected].BackColor = Common.OldBackGround;
-				this.BackChessBoard();
 			}
 		}
 
