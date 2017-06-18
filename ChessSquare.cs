@@ -162,10 +162,7 @@ namespace ChessKing
                         this.ChangeTurn();
                     }
                 }
-                else
-                {
-                    this.minimaxRoot();
-                }
+                else { }
 			}
 			else
 			{
@@ -181,7 +178,7 @@ namespace ChessKing
 				else
 				{
 					this.ChangeTurn();
-				}
+                }
 			}
 		}
 
@@ -375,6 +372,8 @@ namespace ChessKing
                         
                     }
                     Common.CanMove.Clear();
+
+                    this.minimaxRoot();
                 }
 				else //not inside caneat list
 				{
