@@ -20,7 +20,8 @@ namespace ChessKing
                 if (board[i, j].Chess == null)
                 {
                     //load blue poin on button, in the way of piece
-                    board[i, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                        board[i, j].Image = Image.FromFile(linkPoint);
                     Common.CanMove.Add(board[i, j]);
                 }
                 else
@@ -28,7 +29,8 @@ namespace ChessKing
                     //square is not empty, check color ,if diffirence about color, change back color
                     if (this.Team != board[i, j].Chess.Team)
                     {
-                        board[i, j].BackColor = Color.Red;
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                            board[i, j].BackColor = Color.Red;
                         Common.CanMove.Add(board[i, j]);
                         break;
                     }
@@ -48,7 +50,8 @@ namespace ChessKing
                 if (board[i, j].Chess == null)
                 {
                     //load blue poin on button, in the way of piece
-                    board[i, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                        board[i, j].Image = Image.FromFile(linkPoint);
                     Common.CanMove.Add(board[i, j]);
                 }
                 else
@@ -56,7 +59,8 @@ namespace ChessKing
                     //square is not empty, check color ,if diffirence about color, change back color
                     if (this.Team != board[i, j].Chess.Team)
                     {
-                        board[i, j].BackColor = Color.Red;
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                             board[i, j].BackColor = Color.Red;
                         Common.CanMove.Add(board[i, j]);
                         break;
                     }
@@ -76,7 +80,8 @@ namespace ChessKing
                 if (board[i, j].Chess == null)
                 {
                     //load blue poin on button, in the way of piece
-                    board[i, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                        board[i, j].Image = Image.FromFile(linkPoint);
                     Common.CanMove.Add(board[i, j]);
                 }
                 else
@@ -84,7 +89,8 @@ namespace ChessKing
                     //square is not empty, check color ,if diffirence about color, change back color
                     if (this.Team != board[i, j].Chess.Team)
                     {
-                        board[i, j].BackColor = Color.Red;
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                            board[i, j].BackColor = Color.Red;
                         Common.CanMove.Add(board[i, j]);
                         break;
                     }
@@ -104,7 +110,8 @@ namespace ChessKing
                 if (board[i, j].Chess == null)
                 {
                     //load blue poin on button, in the way of piece
-                    board[i, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                        board[i, j].Image = Image.FromFile(linkPoint);
                     Common.CanMove.Add(board[i, j]);
                 }
                 else
@@ -112,7 +119,8 @@ namespace ChessKing
                     //square is not empty, check color ,if diffirence about color, change back color
                     if (this.Team != board[i, j].Chess.Team)
                     {
-                        board[i, j].BackColor = Color.Red;
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+                            board[i, j].BackColor = Color.Red;
                         Common.CanMove.Add(board[i, j]);
                         break;
                     }

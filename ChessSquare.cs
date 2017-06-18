@@ -10,6 +10,11 @@ namespace ChessKing
 {
 	class ChessSquare : Button
 	{
+        public ChessSquare(ChessSquare a)
+        {
+            Chess = a.Chess;
+            Image = a.Image;
+        }
 		public FindWayAction findWayAction;
 		enum ColorTeam
 		{
@@ -63,7 +68,6 @@ namespace ChessKing
 			}
 		}
 
-
 		public void BackChessBoard()
 		{
 			for (int row = 0; row < 8; row++)
@@ -114,7 +118,7 @@ namespace ChessKing
 			this.FlatAppearance.BorderSize = 0;
 		}
 
-        private List<ChessSquare[,]> avalBoard;
+        private List<ChessSquare[,]> avalBoard = new List<ChessSquare[,]>();
 
 		protected override void OnClick(EventArgs e)
 		{
@@ -139,14 +143,14 @@ namespace ChessKing
 			}
 
             //Mode = true is 2 player, Mode = false is 1 player
-			if (Common.IsTurn % 2 == 0)
+			if (Common.IsTurn % 2 == 1)
 			{
                 //create turn for 2 team, white go first
                 if (Common.IsMode == true)
                 {
                     if (Common.IsSelectedSquare == false)
                     {
-                        if (this.Chess.Team == (int)ColorTeam.White)
+                        if (this.Chess.Team == (int)ColorTeam.Black)
                         {
                             this.ChangeTurn();
                         }
@@ -167,7 +171,7 @@ namespace ChessKing
 			{
 				if (Common.IsSelectedSquare == false)
 				{
-					if (this.Chess.Team == (int)ColorTeam.Black)
+					if (this.Chess.Team == (int)ColorTeam.White)
 					{
 						this.ChangeTurn();
 					}
@@ -183,67 +187,137 @@ namespace ChessKing
 
         protected void minimaxRoot()
         {
-            int depth = 2;
-            int value = -9999;
+            int depth = 1;
+            int valueint = -9999;
+            int value = 0;
+            int alpha = -9999, beta = 9999;
             bool isMax = true;
             ChessSquare[,] temp = new ChessSquare[8, 8];
             ChessSquare[,] bestMove = new ChessSquare[8, 8];
+            ChessSquare[,] a = new ChessSquare[8, 8];
             temp = Common.Board;
-            this.createList(ref temp , 1, avalBoard);
-            //coding minimax in here; //having this minimax(depth-1, nowBoard, !isMax);
-
-            Common.Board = bestMove;
-            Common.IsTurn++;
+            this.createList(temp, 2, avalBoard);
+            /*value = minimax(depth - 1, ref temp, alpha, beta, !isMax);
+            for (int i = 0; i < avalBoard.Count; i++) {
+                a = avalBoard[i];
+                if (value == BestValue(ref a)) {
+                    bestMove = a;
+                    break;
+                }
+            }*/
+            for (int i = 0; i < avalBoard.Count; i++)
+            {
+                //Copy(ref a,  ref avalBoard[i]);
+                a = avalBoard[i];
+                value = minimax(depth - 1, ref a, alpha, beta, !isMax);
+                if (value >= valueint)
+                {
+                    bestMove = a;
+                    valueint = value;
+                }
+            }
+            for (int k = 0; k < 8; k++)
+            {
+                for (int l = 0; l < 8; l++)
+                {
+                    Common.Board[k, l].Chess = bestMove[k, l].Chess;
+                    Common.Board[k, l].Image = bestMove[k, l].Image;
+                }
+            }
+                Common.IsTurn++;
+            avalBoard.Clear();
         }
 
-        List<ChessSquare[,]> tempList;
+        List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
 
-        /*protected int minimax(int depth, ref ChessSquare[,] root, bool isMax)
+        protected int minimax(int depth, ref ChessSquare[,] root, int alpha, int beta, bool isMax)
         {
+         
+            if (depth == 0)
+                return isMax ? this.BestValue(ref root) : -this.BestValue(ref root);
+            ChessSquare[,] a = new ChessSquare[8, 8];
+            ChessSquare[,] b = new ChessSquare[8, 8];
+            Copy(ref root, ref b);
+           // alpha = -9999;
+           // beta = 9999;
             int team = 0;
-            if (isMax == true) team = 1;
-            else team = 2;
-
-            if (depth == 0) return -this.BestValue(ref root);
-
-            //make list can move from root
-            createList(ref root, team, tempList);
-
+            if (isMax == true) team = 2; //black
+            else team = 1;                 //white
+            
+            //ke list can move from root
+            createList(b, team, tempList);
+            if (team == 2)
+            {
+                for (int i = 0; i < tempList.Count; i++)
+                {
+                    a = tempList[i];
+                    alpha = Math.Max(alpha, minimax(depth - 1, ref a, alpha, beta, !isMax));
+                    if (beta <= alpha)
+                        break;
+                }
+                tempList.Clear();
+                return alpha;
+            }
+            else
+            {
+                for (int i = 0; i < tempList.Count; i++)
+                {
+                    a = tempList[i];
+                    beta = Math.Min(beta, minimax(depth - 1, ref a, alpha, beta, !isMax));
+                    if (beta <= alpha)
+                        break;
+                }
+                tempList.Clear();
+                return beta;
+            }
             //your code is here lol...
-        }*/
 
-        protected void createList(ref ChessSquare[,] temp, int team, List<ChessSquare[,] > listRoot)
+        }
+        protected void createList(ChessSquare[,] temp, int team, List<ChessSquare[,]> listRoot)
         {
             ChessSquare[,] tempA = new ChessSquare[8, 8];
+            // ChessSquare[,] tempB = new ChessSquare[8, 8];
             int tempRow, tempCol;
+            //tempB = (ChessSquare[,])temp.Clone();
             for (int row = 0; row < 8; row++)
             {
-                for(int col = 0; col < 8; col++)
+                for (int col = 0; col < 8; col++)
                 {
-                    if(temp[row,col].Chess.Team == team)
+                    if (temp[row, col].Chess != null)
                     {
-                        temp[row,col].Chess.FindWay(ref temp, row, col);
-                        if(Common.CanMove.Count != 0)
+                        if (temp[row, col].Chess.Team == team)
                         {
-                            for(int i = 0; i < Common.CanMove.Count; i++)
-                            {
-                                tempA = temp;
-                                tempRow = Common.CanMove[i].row;
-                                tempCol = Common.CanMove[i].col;
-                                tempA[tempRow, tempCol].Image = temp[row, col].Image;
-                                tempA[tempRow, tempCol].Chess = temp[row, col].Chess;
-                                tempA[row, col].Image = null;
-                                tempA[row, col].Chess = null;
 
-                                listRoot.Add(tempA);
+                            temp[row, col].Chess.FindWay(ref temp, row, col);
+
+                            if (Common.CanMove.Count != 0)
+                            {
+                                for (int i = 0; i < Common.CanMove.Count; i++)
+                                {
+                                    Copy(ref temp, ref tempA);
+                                    tempRow = Common.CanMove[i].row;
+                                    tempCol = Common.CanMove[i].col;
+                                    tempA[tempRow, tempCol].Image = tempA[row, col].Image;
+                                    tempA[tempRow, tempCol].Chess = tempA[row, col].Chess;
+                                    tempA[row, col].Image = null;
+                                    tempA[row, col].Chess = null;
+
+                                    listRoot.Add(tempA);
+
+                                }
+                                Common.CanMove.Clear();
                             }
-                            Common.CanMove.Clear();
                         }
                     }
+                   /* else
+                    {
+                        Copy(ref temp, ref tempA);
+
+                    }*/
                 }
             }
         }
-
+        
 		protected void ChangeTurn()
 		{
 			//select yet
@@ -329,6 +403,16 @@ namespace ChessKing
                 }
             }
             return Val;
+        }
+        public void Copy(ref ChessSquare[,] src, ref ChessSquare[,] dst)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                for (int l = 0; l < 8; l++)
+                {
+                    dst[k, l] = new ChessSquare(src[k, l]);
+                }
+            }
         }
     }
 }

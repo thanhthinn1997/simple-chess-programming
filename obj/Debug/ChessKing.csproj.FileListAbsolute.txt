@@ -16,3 +16,12 @@ K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-pro
 K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.csproj.GenerateResource.Cache
 K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.exe
 K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.pdb
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\bin\Debug\ChessKing.exe.config
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.exe
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.pdb
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\bin\Debug\ChessKing.exe
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\bin\Debug\ChessKing.pdb
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.frmChessKing.resources
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.Properties.Resources.resources
+D:\Other Key\Downloads\simple-chess-programming-edit001 (1)\simple-chess-programming-edit001\obj\Debug\ChessKing.csproj.GenerateResource.Cache

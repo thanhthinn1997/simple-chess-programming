@@ -5,7 +5,7 @@ namespace ChessKing
 {
 	class Common
 	{
-        static public bool IsMode = true;
+        static public bool IsMode = false;
 		static public bool IsSelectedSquare = false; //selected yet
 		static public int IsTurn = 0; 
 
