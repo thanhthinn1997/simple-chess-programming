@@ -18,5 +18,9 @@ namespace ChessKing
 
 		static public Color OldBackGround;//keep back ground before change to violet
 
+		static public bool CheckPromote = false; //phong hau
+		static public int RowProQueen = -1;
+		static public int ColProQueen = -1;
+
 	}
 }
