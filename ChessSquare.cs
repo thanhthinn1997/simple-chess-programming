@@ -188,7 +188,7 @@ namespace ChessKing
 
 		protected void minimaxRoot()
 		{
-			int depth = 1;
+			int depth = 2;
 			int valueint = -9999;
 			int value = 0;
 			int alpha = -10000, beta = 10000;
@@ -391,7 +391,7 @@ namespace ChessKing
 							this.Chess = new Queen();
 							this.Chess.Team = (int)ColorTeam.Black;
 								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess = this.Chess;
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkWhiteQueen);
+								Common.Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkBlackQueen);
 								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = -90;
 							}
 							Common.CheckPromote = false;
@@ -416,7 +416,11 @@ namespace ChessKing
                     Common.CanMove.Clear();
 
                     if(Common.IsMode == false && Common.IsTurn % 2 == 1)
-                    this.minimaxRoot();
+                    {
+                        this.minimaxRoot();
+                        this.BackChessBoard();
+                    }
+                    
                 }
 				else //not inside caneat list
 				{
