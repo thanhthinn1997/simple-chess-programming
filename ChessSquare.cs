@@ -410,6 +410,25 @@ namespace ChessKing
 
                     BackChessBoard();
 
+		    int temp = 0;
+
+                    int avalColor = 0;
+
+                    for(int i = 0; i < 8; i++)
+                        for(int j = 0; j < 8; j++)
+                        {
+                            if (Common.Board[i, j].Chess != null && Common.Board[i, j].Chess.IsKing)
+                            {
+                                temp++;
+                                avalColor = Common.Board[i, j].Chess.Team;
+                            }
+                        }
+
+                    if(temp < 2)
+                    {
+                        if (avalColor == 1) MessageBox.Show("The White Win!");
+                        else MessageBox.Show("The White Win!");
+                    }
                 }
 				else //not inside caneat list
 				{
