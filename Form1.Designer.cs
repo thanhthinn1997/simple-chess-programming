@@ -28,25 +28,49 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.btnPlay = new System.Windows.Forms.Button();
+			this.btn2Player = new System.Windows.Forms.Button();
+			this.bnt1Player = new System.Windows.Forms.Button();
+			this.bntQuit = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// btnPlay
+			// btn2Player
 			// 
-			this.btnPlay.Location = new System.Drawing.Point(618, 22);
-			this.btnPlay.Name = "btnPlay";
-			this.btnPlay.Size = new System.Drawing.Size(70, 25);
-			this.btnPlay.TabIndex = 0;
-			this.btnPlay.Text = "Play";
-			this.btnPlay.UseVisualStyleBackColor = true;
-			this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+			this.btn2Player.Location = new System.Drawing.Point(607, 78);
+			this.btn2Player.Name = "btn2Player";
+			this.btn2Player.Size = new System.Drawing.Size(75, 25);
+			this.btn2Player.TabIndex = 0;
+			this.btn2Player.Text = "2 Player";
+			this.btn2Player.UseVisualStyleBackColor = true;
+			this.btn2Player.Click += new System.EventHandler(this.btn2Player_Click);
+			// 
+			// bnt1Player
+			// 
+			this.bnt1Player.Location = new System.Drawing.Point(607, 135);
+			this.bnt1Player.Name = "bnt1Player";
+			this.bnt1Player.Size = new System.Drawing.Size(75, 23);
+			this.bnt1Player.TabIndex = 1;
+			this.bnt1Player.Text = "1 Player";
+			this.bnt1Player.UseVisualStyleBackColor = true;
+			this.bnt1Player.Click += new System.EventHandler(this.bnt1Player_Click);
+			// 
+			// bntQuit
+			// 
+			this.bntQuit.Location = new System.Drawing.Point(611, 201);
+			this.bntQuit.Name = "bntQuit";
+			this.bntQuit.Size = new System.Drawing.Size(75, 23);
+			this.bntQuit.TabIndex = 2;
+			this.bntQuit.Text = "Quit";
+			this.bntQuit.UseVisualStyleBackColor = true;
+			this.bntQuit.Click += new System.EventHandler(this.bntQuit_Click);
 			// 
 			// frmChessKing
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(784, 561);
-			this.Controls.Add(this.btnPlay);
+			this.Controls.Add(this.bntQuit);
+			this.Controls.Add(this.bnt1Player);
+			this.Controls.Add(this.btn2Player);
 			this.Name = "frmChessKing";
 			this.Text = "Chess King";
 			this.Load += new System.EventHandler(this.frmChessKing_Load);
@@ -56,7 +80,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button btnPlay;
+		private System.Windows.Forms.Button btn2Player;
+		private System.Windows.Forms.Button bnt1Player;
+		private System.Windows.Forms.Button bntQuit;
 	}
 }
 

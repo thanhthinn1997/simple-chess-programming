@@ -9,23 +9,35 @@ namespace ChessKing
 {
 	class Pawn : Chess
 	{
-		string linkPoint = "Image\\circle.png";
-		public override void FindWay(ref ChessSquare[,] board, int row, int col)
+        string linkPoint = "Image\\circle.png";
+
+        public Pawn()
+        {
+            this.isPawn = true;
+        }
+
+        public override void FindWay( ChessSquare[,] board, int row, int col)
 		{
 			//check mau -> xet quan co di tu duoi len
 			if (board[row, col].Chess.Team == (int)ColorTeam.White)
 			{
 				if (row < 7)
 				{
-					if (col - 1 >= 0)
+					if (col - 1 >= 0 && row > 0)
 					{
 						//check duong cheo
 						if (board[row - 1, col - 1].Chess != null)
 						{
 							if (this.Team != board[row - 1, col - 1].Chess.Team)
 							{
-								board[row - 1, col - 1].BackColor = Color.Red;
-								Common.CanEat.Add(board[row - 1, col - 1]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[row - 1, col - 1].BackColor = Color.Red;
+
+								if (row - 1 == 0 && board[row, col].Chess.Team == 1)
+								{
+									Common.CheckPromote = true;
+								}
+								Common.CanMove.Add(board[row - 1, col - 1]);
 							}
 							else
 							{ }
@@ -36,14 +48,20 @@ namespace ChessKing
 					else
 					{ }
 
-					if (col + 1 < 8)
+					if (col + 1 < 8 && row > 0)
 					{
 						if (board[row - 1, col + 1].Chess != null)
 						{
 							if (this.Team != board[row - 1, col + 1].Chess.Team)
 							{
-								board[row - 1, col + 1].BackColor = Color.Red;
-								Common.CanEat.Add(board[row - 1, col + 1]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[row - 1, col + 1].BackColor = Color.Red;
+
+								if (row - 1 == 0 && board[row, col].Chess.Team == 1)
+								{
+									Common.CheckPromote = true;
+								}
+								Common.CanMove.Add(board[row - 1, col + 1]);
 							}
 							else
 							{ }
@@ -60,19 +78,28 @@ namespace ChessKing
 						{
 							if (board[i, col].Chess == null)
 							{
-								board[i, col].Image = Image.FromFile(linkPoint);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[i, col].Image = Image.FromFile(linkPoint);
 								Common.CanMove.Add(board[i, col]);
 							}
 							else
 								break;
 						}
 					}
+
 					else
 					{
 						if (board[row - 1, col].Chess == null)
 						{
-							board[row - 1, col].Image = Image.FromFile(linkPoint);
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+							    board[row - 1, col].Image = Image.FromFile(linkPoint);
+							if (row - 1 == 0 && board[row, col].Chess.Team == 1)
+							{
+								Common.CheckPromote = true;
+							}
 							Common.CanMove.Add(board[row - 1, col]);
+							//Dk phong hau
+							
 						}
 						else
 						{ }
@@ -80,20 +107,27 @@ namespace ChessKing
 				}
 				else
 				{ }
+				
 			}
 			//check mau, xet quan co tu tren xuong duoi
 			else
 			{
 				if (row >= 1)
 				{
-					if (col - 1 >= 0)
+					if (col - 1 >= 0 && row < 7)
 					{
 						if (board[row + 1, col - 1].Chess != null)
 						{
 							if (this.Team != board[row + 1, col - 1].Chess.Team)
 							{
-								board[row + 1, col - 1].BackColor = Color.Red;
-								Common.CanEat.Add(board[row + 1, col - 1]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[row + 1, col - 1].BackColor = Color.Red;
+
+								if (row + 1 == 0 && board[row, col].Chess.Team == 2)
+								{
+									Common.CheckPromote = true;
+								}
+								Common.CanMove.Add(board[row + 1, col - 1]);
 							}
 							else
 							{ }
@@ -104,14 +138,20 @@ namespace ChessKing
 					else
 					{ }
 
-					if (col + 1 < 8)
+					if (col + 1 < 8 && row < 7)
 					{
 						if (board[row + 1, col + 1].Chess != null)
 						{
 							if (this.Team != board[row + 1, col + 1].Chess.Team)
 							{
-								board[row + 1, col + 1].BackColor = Color.Red;
-								Common.CanEat.Add(board[row + 1, col + 1]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[row + 1, col + 1].BackColor = Color.Red;
+
+								if (row + 1 == 0 && board[row, col].Chess.Team == 2)
+								{
+									Common.CheckPromote = true;
+								}
+								Common.CanMove.Add(board[row + 1, col + 1]);
 							}
 							else
 							{ }
@@ -129,7 +169,8 @@ namespace ChessKing
 						{
 							if (board[i, col].Chess == null)
 							{
-								board[i, col].Image = Image.FromFile(linkPoint);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[i, col].Image = Image.FromFile(linkPoint);
 								Common.CanMove.Add(board[i, col]);
 							}
 							else
@@ -138,10 +179,17 @@ namespace ChessKing
 					}
 					else
 					{
-						if (board[row + 1, col].Chess == null)
+						if (row < 7 && board[row + 1, col].Chess == null)
 						{
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
 							board[row + 1, col].Image = Image.FromFile(linkPoint);
+							if (row + 1 == 7 && board[row, col].Chess.Team == 2)
+							{
+								Common.CheckPromote = true;
+							}
 							Common.CanMove.Add(board[row + 1, col]);
+							//dk phong hau
+							
 						}
 						else
 						{ }

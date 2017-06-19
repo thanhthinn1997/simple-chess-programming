@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +36,7 @@ namespace ChessKing
 		string linkBlackKing = "Image\\Chess_kdt60.png";
 		string linkBlackPawn = "Image\\Chess_pdt60.png";
 
-
+		
 
 		public frmChessKing()
 		{
@@ -80,6 +80,8 @@ namespace ChessKing
 
 					Board[row, col].findWayAction += new FindWayAction(OnAction);
 					this.Controls.Add(Board[row, col]);
+
+					//Display();
 				}
 			}
 		}
@@ -90,9 +92,8 @@ namespace ChessKing
 			Board = Common.Board;
 		}
 
-		private void btnPlay_Click(object sender, EventArgs e)
+		private void Display()
 		{
-			//load piece on Board 
 			Chess tempChess;
 
 			//pawn
@@ -139,6 +140,7 @@ namespace ChessKing
 					Board[7, 7].Image = Image.FromFile(linkWhiteCastle);
 					Board[7, 0].Chess.Evaluation = 50;
 					Board[7, 7].Chess.Evaluation = 50;
+
 				}
 			}
 
@@ -155,6 +157,7 @@ namespace ChessKing
 					Board[0, 6].Image = Image.FromFile(linkBlackKnight);
 					Board[0, 1].Chess.Evaluation = -30;
 					Board[0, 6].Chess.Evaluation = -30;
+
 				}
 				else
 				{
@@ -191,6 +194,7 @@ namespace ChessKing
 					Board[7, 5].Image = Image.FromFile(linkWhiteBishop);
 					Board[7, 2].Chess.Evaluation = 30;
 					Board[7, 5].Chess.Evaluation = 30;
+
 				}
 			}
 
@@ -220,9 +224,45 @@ namespace ChessKing
 			Board[7, 4].Image = Image.FromFile(linkWhiteKing);
 			Board[7, 4].Chess.Evaluation = 900;
 
+			//if (Common.CheckPromote == true)
+			//{
+			//	tempChess = new Queen();
+			//	if (Board[Common.RowSelected, Common.ColSelected].Chess.Team == 1) //white
+			//	{
+			//		tempChess.Team = (int)ColorTeam.White;
+			//		Board[Common.RowProQueen, Common.ColProQueen].Chess = tempChess;
+			//		Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkWhiteQueen);
+			//		Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = 90;
+			//	}
+			//	else //black
+			//	{
+			//		tempChess.Team = (int)ColorTeam.Black;
+			//		Board[Common.RowProQueen, Common.ColProQueen].Chess = tempChess;
+			//		Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkBlackQueen);
+			//		Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = -90;
+			//	}
+			//	Common.CheckPromote = false;
+			//}
+
 			Common.Board = Board;
 		}
 
+		private void btn2Player_Click(object sender, EventArgs e)
+		{
+			Display();
+			Common.IsMode = true;
+			bnt1Player.Enabled = false;
+		}
+
+		private void bnt1Player_Click(object sender, EventArgs e)
+		{
+			Display();
+			Common.IsMode = false;
+		}
+
+		private void bntQuit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
-

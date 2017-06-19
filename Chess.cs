@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,26 @@ namespace ChessKing
 			White,
 			Black,
 		};
+
+		/// <summary>
+		/// status of chess
+		/// </summary>
+		private bool _die = false;
+
+		/// <summary>
+		/// status of chess
+		/// </summary>
+		public bool IsDie
+		{
+			get
+			{
+				return _die;
+			}
+			set
+			{
+				_die = value;
+			}
+		}
 
 		/// <summary>
 		/// color of chess
@@ -35,56 +55,48 @@ namespace ChessKing
 			}
 		}
 
-		private bool isKing = false;
-
-		/// <summary>
-		/// color of chess
-		/// </summary>
+        protected bool isKing = false;
 		public bool IsKing
 		{
-			get
-			{
-				return isKing;
-			}
-			set
-			{
-				isKing = value;
-			}
+            get
+            {
+                return isKing;
+            }
+            set
+            {
+                isKing = value;
+            }
 		}
 
-		private bool isDie = false;
+        protected bool isPawn = false;
+        public bool IsPawn
+        {
+            get
+            {
+                return isPawn;
+            }
+            set
+            {
+                isPawn = value;
+            }
+        }
 
-		/// <summary>
-		/// color of chess
-		/// </summary>
-		public bool IsDie
-		{
-			get
-			{
-				return isDie;
-			}
-			set
-			{
-				isDie = value;
-			}
-		}
+        private int evaluation;
+        public int Evaluation
+        {
+            get
+            {
+                return evaluation;
+            }
+            set
+            {
+                evaluation = value;
+            }
+        }
 
-		private int evaluation;
-		public int Evaluation
+        public virtual void FindWay(ChessSquare[,] board, int row, int col)
 		{
-			get
-			{
-				return evaluation;
-			}
-			set
-			{
-				evaluation = value;
-			}
-		}
 
-		public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
-		{
-			
 		}
 
 	}
