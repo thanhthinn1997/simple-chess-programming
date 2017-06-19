@@ -10,7 +10,7 @@ namespace ChessKing
     class Bishop : Chess
     {
         string linkPoint = "Image\\circle.png";
-        public override void FindWay(ref ChessSquare[,] board, int row, int col)
+        public override void FindWay(ChessSquare[,] board, int row, int col)
         {
             //left up
             int j = col - 1;

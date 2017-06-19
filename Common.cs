@@ -12,6 +12,7 @@ namespace ChessKing
 		static public ChessSquare[,] Board;// = new ChessSquare[8, 8];
 
 		static public List<ChessSquare> CanMove = new List<ChessSquare>(); // create list, save position of piece can move
+        static public List<ChessSquare> CanEat = new List<ChessSquare>();
 
 		static public int RowSelected =-1; //set value =-1, not in chessboard
 		static public int ColSelected =-1; //set value =-1, not in chessboard

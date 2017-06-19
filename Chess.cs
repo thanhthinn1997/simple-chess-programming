@@ -68,6 +68,19 @@ namespace ChessKing
             }
 		}
 
+        protected bool isPawn = false;
+        public bool IsPawn
+        {
+            get
+            {
+                return isPawn;
+            }
+            set
+            {
+                isPawn = value;
+            }
+        }
+
         private int evaluation;
         public int Evaluation
         {
@@ -81,7 +94,7 @@ namespace ChessKing
             }
         }
 
-        public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
+        public virtual void FindWay(ChessSquare[,] board, int row, int col)
 		{
 
 		}

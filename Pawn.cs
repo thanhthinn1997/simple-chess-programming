@@ -10,7 +10,13 @@ namespace ChessKing
 	class Pawn : Chess
 	{
         string linkPoint = "Image\\circle.png";
-		public override void FindWay(ref ChessSquare[,] board, int row, int col)
+
+        public Pawn()
+        {
+            this.isPawn = true;
+        }
+
+        public override void FindWay( ChessSquare[,] board, int row, int col)
 		{
 			//check mau -> xet quan co di tu duoi len
 			if (board[row, col].Chess.Team == (int)ColorTeam.White)

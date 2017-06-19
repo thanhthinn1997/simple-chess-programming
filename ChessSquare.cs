@@ -16,6 +16,8 @@ namespace ChessKing
         {
             Chess = a.Chess;
             Image = a.Image;
+            Row = a.Row;
+            Col = a.Col;
         }
 		public FindWayAction findWayAction;
 		enum ColorTeam
@@ -76,11 +78,11 @@ namespace ChessKing
 			{
 				for (int col = 0; col < 8; col++)
 				{
-                    if (Common.Board[row, col].BackColor == Color.Blue && Common.Board[row, col].Chess != null && Common.Board[row, col].Chess.IsKing == true)
-                    {
+                    //if (Common.Board[row, col].Chess != null && Common.Board[row, col].Chess.IsKing == true && this.Check() == true)
+                    //{
                         //do nothing
-                    }
-                    else
+                    //}
+                    //else
                     {
                         if (row % 2 == 0)
                         {
@@ -188,7 +190,7 @@ namespace ChessKing
 
 		protected void minimaxRoot()
 		{
-			int depth = 2;
+            int depth = 2;
 			int valueint = -9999;
 			int value = 0;
 			int alpha = -10000, beta = 10000;
@@ -210,7 +212,7 @@ namespace ChessKing
 			{
 				//Copy(ref a,  ref avalBoard[i]);
 				a = avalBoard[i];
-				value = minimax(depth - 1, ref a, alpha, beta, !isMax);
+				value = minimax(depth - 1, a, alpha, beta, !isMax);
 				if (value >= valueint)
 				{
 					bestMove = a;
@@ -231,11 +233,11 @@ namespace ChessKing
 
 		List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
 
-		protected int minimax(int depth, ref ChessSquare[,] root, int alpha, int beta, bool isMax)
+		protected int minimax(int depth, ChessSquare[,] root, int alpha, int beta, bool isMax)
 		{
 
 			if (depth == 0)
-				return isMax ? this.BestValue(ref root) : -this.BestValue(ref root);
+				return -this.BestValue(root);
 			ChessSquare[,] a = new ChessSquare[8, 8];
 
 			int team = 0;
@@ -250,7 +252,7 @@ namespace ChessKing
 				for (int i = 0; i < tempList.Count; i++)
 				{
 					a = tempList[i];
-					valueint = Math.Max(valueint, minimax(depth - 1, ref a, alpha, beta, !isMax));
+					valueint = Math.Max(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
 					/*alpha = Math.Max(alpha, valueint);
                     if (beta <= alpha)
                         return valueint;
@@ -265,7 +267,7 @@ namespace ChessKing
 				for (int i = 0; i < tempList.Count; i++)
 				{
 					a = tempList[i];
-					valueint = Math.Min(valueint, minimax(depth - 1, ref a, alpha, beta, !isMax));
+					valueint = Math.Min(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
 					/*beta = Math.Min(beta, valueint);
 					 if (beta <= alpha)
 						 return valueint;
@@ -278,21 +280,21 @@ namespace ChessKing
 
 		}
 		protected void createList(ChessSquare[,] temp, int team, List<ChessSquare[,]> listRoot)
-		{
-
-			// ChessSquare[,] tempB = new ChessSquare[8, 8];
+		 {
+            //// ChessSquare[,] tempB = new ChessSquare[8, 8];
 			int tempRow, tempCol;
 			//tempB = (ChessSquare[,])temp.Clone();
 			for (int row = 0; row < 8; row++)
 			{
 				for (int col = 0; col < 8; col++)
 				{
-					if (temp[row, col].Chess != null)
+					
+                    if (temp[row, col].Chess != null)
 					{
 						if (temp[row, col].Chess.Team == team)
 						{
 
-							temp[row, col].Chess.FindWay(ref temp, row, col);
+							temp[row, col].Chess.FindWay( temp, row, col);
 
 							if (Common.CanMove.Count != 0)
 							{
@@ -332,7 +334,7 @@ namespace ChessKing
                     Common.IsSelectedSquare = true;
 
                     Common.OldBackGround = Common.Board[this.row, this.col].BackColor; //keep background color of chess square 
-                    this.Chess.FindWay(ref Common.Board, this.row, this.col); //findway can move and eat
+                    this.Chess.FindWay( Common.Board, this.row, this.col); //findway can move and eat
 					this.findWayAction(); 
 					this.BackColor = System.Drawing.Color.Violet; //change background to violet
 					Common.RowSelected = this.row; //keep the row
@@ -369,58 +371,43 @@ namespace ChessKing
 					//thay doi quan co
 					this.Chess = Common.Board[Common.RowSelected, Common.ColSelected].Chess;
 					Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
-					//phong hau cho tot
-
-					if (Common.CheckPromote == true)
-					{
-							
-							if (Common.Board[Common.RowProQueen, Common.ColProQueen].Chess.Team == 1) //white
-							{
-								//Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
-								//Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
-							this.Chess = new Queen();
-							this.Chess.Team = (int)ColorTeam.White;
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess = this.Chess;
-							Common.Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkWhiteQueen);
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = 90;
-							}
-							else //black
-							{
-								Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
-								Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
-							this.Chess = new Queen();
-							this.Chess.Team = (int)ColorTeam.Black;
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess = this.Chess;
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkBlackQueen);
-								Common.Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = -90;
-							}
-							Common.CheckPromote = false;
-					}
 
 					Common.IsTurn++; //change turn
 					Common.CanMove.Clear();
-
-
-                    //check if King is danger
-                    this.Chess.FindWay(ref Common.Board, this.row, this.col);
-                    this.BackChessBoard();
-                    for (int i = 0; i < Common.CanMove.Count; i++)
-                    {
-                        if (Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
-                        else
-                        {
-                            if (Common.CanMove[i].Chess.IsKing == true) Common.CanMove[i].BackColor = Color.Blue;
-                        }
-                        
-                    }
-                    Common.CanMove.Clear();
 
                     if(Common.IsMode == false && Common.IsTurn % 2 == 1)
                     {
                         this.minimaxRoot();
                         this.BackChessBoard();
                     }
-                    
+
+                    for(int j = 0; j < 8; j++)
+                    {
+                        if (Common.Board[0, j].Chess != null && Common.Board[0, j].Chess.IsPawn) phongHau(ref Common.Board[0, j]);
+                        if (Common.Board[7, j].Chess != null && Common.Board[7, j].Chess.IsPawn) phongHau(ref Common.Board[7, j]);
+                    }
+
+                    bool CheckKing = false;
+                    ChessSquare Kingtemp = new ChessSquare();
+
+                    this.Check(ref CheckKing, ref Kingtemp);
+                    if (CheckKing == true)
+                    {
+                        //MessageBox.Show(CheckKing.ToString());
+                        Common.CanMove.Clear();
+                        Checkmate(Kingtemp);
+                    }
+                    else
+                    { }
+
+                    for (int k = 0; k < Common.CanMove.Count; k++)
+                    {
+                        if (Common.CanMove[k].Chess == null) Common.CanMove[k].Image = null;
+                    }
+
+                    Common.CanEat.Clear();
+                    Common.CanMove.Clear();
+
                 }
 				else //not inside caneat list
 				{
@@ -435,7 +422,113 @@ namespace ChessKing
 			}
 		}
 
-        public int BestValue(ref ChessSquare[,] board)
+        private void phongHau(ref ChessSquare temp)
+        {
+            Chess newQueen = new Queen();
+            if (temp.Chess.Team == 1) //white
+            {
+                //Common.Board[Common.RowSelected, Common.ColSelected].Image = null;
+                //Common.Board[Common.RowSelected, Common.ColSelected].Chess = null;
+                newQueen.Team = (int)ColorTeam.White;
+                temp.Chess = newQueen;
+                temp.Image = Image.FromFile(linkWhiteQueen);
+                temp.Chess.Evaluation = 90;
+            }
+            else //black
+            {
+                newQueen.Team = (int)ColorTeam.Black;
+                temp.Chess = newQueen;
+                temp.Image = Image.FromFile(linkBlackQueen);
+                temp.Chess.Evaluation = -90;
+            }
+        }
+
+        private void Check(ref bool temp, ref ChessSquare KingTemp)
+        {
+            //check if King is danger
+            for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 8; j++)
+                {
+                    if (Common.Board[i, j].Chess != null)
+                    {
+                        Common.Board[i, j].Chess.FindWay(Common.Board, Common.Board[i, j].row, Common.Board[i, j].col);
+                        for (int k = 0; k < Common.CanMove.Count; k++)
+                        {
+                            if (Common.CanMove[k].Chess == null)
+                            {
+                                Common.CanMove[k].Image = null;
+                            }
+                            else
+                            {
+                                if (Common.CanMove[k].Chess.IsKing == true)
+                                {
+                                    //BackChessBoard();
+                                    Common.CanMove[k].BackColor = Color.Blue;
+                                    temp = true;
+                                    KingTemp = Common.CanMove[k];
+                                }
+                                else
+                                { }
+                            }
+                        }
+                    }
+                    else { }
+                    Common.CanMove.Clear();
+                }
+            if (temp == true) return;
+            temp = false;
+        }
+
+        private void Checkmate(ChessSquare temp)
+        {
+            bool checkmate = true;
+            //temp.Chess.FindWay(Common.Board, temp.Row, temp.Col);
+
+            for(int i = 0; i < 8; i++)
+                for(int j = 0; j < 8; j++)
+                {
+                    if (Common.Board[i, j].Chess != null)
+                    {
+                        if (Common.Board[i, j].Chess.Team != temp.Chess.Team && Common.Board[i, j].BackColor != Color.Red)
+                        {
+                            Common.Board[i, j].Chess.FindWay(Common.Board, Common.Board[i, j].Row, Common.Board[i, j].Col);
+                            for (int k = 0; k < Common.CanMove.Count; k++)
+                            {
+                                if (Common.CanMove[k].Chess == null)
+                                {
+                                    Common.CanMove[k].Image = null;
+                                }
+                                Common.CanEat.Add(Common.CanMove[k]);
+                            }
+
+                            Common.CanMove.Clear();
+                        }
+                    }
+                    else
+                    {
+                    }
+                }
+            Common.CanMove.Clear();
+
+            temp.Chess.FindWay(Common.Board, temp.Row, temp.Col);
+
+            for (int i = 0; i < Common.CanMove.Count; i++)
+            {
+                if (Common.CanMove[i].Chess == null)
+                {
+                    Common.CanMove[i].Image = null;
+                }
+                if (!Common.CanEat.Contains(Common.CanMove[i])) checkmate = false;
+            }
+
+            if(checkmate == true)
+            {
+                if (temp.Chess.Team == (int)ColorTeam.White) MessageBox.Show("The Black Wins");
+                else MessageBox.Show("The White Wins");
+            }
+        }
+
+        public int BestValue(ChessSquare[,] board)
         {
             int Val = 0;
             for (int i = 0; i < 8; i++)

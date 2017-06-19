@@ -11,7 +11,7 @@ namespace ChessKing
 	class Castle : Chess
 	{
         string linkPoint = "Image\\circle.png";
-		public override void FindWay(ref ChessSquare[,] board, int row, int col)
+		public override void FindWay( ChessSquare[,] board, int row, int col)
 		{
 			for (int j = col-1; j >= 0; j--)
 			{
