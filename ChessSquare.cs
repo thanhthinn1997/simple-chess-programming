@@ -427,7 +427,7 @@ namespace ChessKing
                     if(temp < 2)
                     {
                         if (avalColor == 1) MessageBox.Show("The White Win!");
-                        else MessageBox.Show("The White Win!");
+                        else MessageBox.Show("The Black Win!");
                     }
                 }
 				else //not inside caneat list
