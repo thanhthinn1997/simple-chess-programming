@@ -408,6 +408,8 @@ namespace ChessKing
                     Common.CanEat.Clear();
                     Common.CanMove.Clear();
 
+                    BackChessBoard();
+
                 }
 				else //not inside caneat list
 				{
