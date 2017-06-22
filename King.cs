@@ -10,8 +10,8 @@ namespace ChessKing
 	class King : Chess
 	{
 		string linkPoint = "Image\\circle.png";
-
-		public King()
+        
+        public King()
 		{
 			this.isKing = true;
 		}

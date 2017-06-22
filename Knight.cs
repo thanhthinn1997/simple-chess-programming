@@ -11,7 +11,11 @@ namespace ChessKing
 	class Knight : Chess
 	{
         string linkPoint = "Image\\circle.png";
-		public override void FindWay( ChessSquare[,] board, int row, int col)
+        public Knight()
+		{
+			this.isKnight = true;
+		}
+        public override void FindWay( ChessSquare[,] board, int row, int col)
 		{
 			//row-2
 			if (row - 2 >= 0)

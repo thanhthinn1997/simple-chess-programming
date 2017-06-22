@@ -10,7 +10,11 @@ namespace ChessKing
     class Queen : Chess
     {
         string linkPoint = "Image\\circle.png";
-		public override void FindWay(ChessSquare[,] board, int row, int col)
+        public Queen()
+		{
+			this.isQueen = true;
+		}
+        public override void FindWay(ChessSquare[,] board, int row, int col)
 		{
 			//move like castle
 			for (int j = col - 1; j >= 0; j--)

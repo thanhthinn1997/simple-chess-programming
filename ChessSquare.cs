@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -190,24 +190,16 @@ namespace ChessKing
 
 		protected void minimaxRoot()
 		{
-            int depth = 2;
-			int valueint = -9999;
-			int value = 0;
-			int alpha = -10000, beta = 10000;
+            int depth = Common.Depth;
+			double valueint = -9999;
+			double value = 0;
+			double alpha = -10000, beta = 10000;
 			bool isMax = true;
 			ChessSquare[,] temp = new ChessSquare[8, 8];
 			ChessSquare[,] bestMove = new ChessSquare[8, 8];
 			ChessSquare[,] a = new ChessSquare[8, 8];
 			temp = Common.Board;
 			this.createList(temp, 2, avalBoard);
-			/*value = minimax(depth - 1, ref temp, alpha, beta, !isMax);
-            for (int i = 0; i < avalBoard.Count; i++) {
-                a = avalBoard[i];
-                if (value == BestValue(ref a)) {
-                    bestMove = a;
-                    break;
-                }
-            }*/
 			for (int i = 0; i < avalBoard.Count; i++)
 			{
 				//Copy(ref a,  ref avalBoard[i]);
@@ -233,7 +225,7 @@ namespace ChessKing
 
 		List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
 
-		protected int minimax(int depth, ChessSquare[,] root, int alpha, int beta, bool isMax)
+		protected double minimax(int depth, ChessSquare[,] root, double alpha, double beta, bool isMax)
 		{
 
 			if (depth == 0)
@@ -248,30 +240,30 @@ namespace ChessKing
 			createList(root, team, tempList);
 			if (team == 2)
 			{
-				int valueint = -9999;
+				double valueint = -9999;
 				for (int i = 0; i < tempList.Count; i++)
 				{
 					a = tempList[i];
 					valueint = Math.Max(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
-					/*alpha = Math.Max(alpha, valueint);
+					alpha = Math.Max(alpha, valueint);
                     if (beta <= alpha)
                         return valueint;
-                     */
+                     
 				}
 				tempList.Clear();
 				return valueint;
 			}
 			else
 			{
-				int valueint = 9999;
+				double valueint = 9999;
 				for (int i = 0; i < tempList.Count; i++)
 				{
 					a = tempList[i];
 					valueint = Math.Min(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
-					/*beta = Math.Min(beta, valueint);
+					beta = Math.Min(beta, valueint);
 					 if (beta <= alpha)
 						 return valueint;
-					*/
+					
 				}
 				tempList.Clear();
 				return valueint;
@@ -410,25 +402,6 @@ namespace ChessKing
 
                     BackChessBoard();
 
-		    int temp = 0;
-
-                    int avalColor = 0;
-
-                    for(int i = 0; i < 8; i++)
-                        for(int j = 0; j < 8; j++)
-                        {
-                            if (Common.Board[i, j].Chess != null && Common.Board[i, j].Chess.IsKing)
-                            {
-                                temp++;
-                                avalColor = Common.Board[i, j].Chess.Team;
-                            }
-                        }
-
-                    if(temp < 2)
-                    {
-                        if (avalColor == 1) MessageBox.Show("The White Win!");
-                        else MessageBox.Show("The Black Win!");
-                    }
                 }
 				else //not inside caneat list
 				{
@@ -549,16 +522,52 @@ namespace ChessKing
             }
         }
 
-        public int BestValue(ChessSquare[,] board)
+        public double PieceEvaluation (double[,] a, int row, int col)
         {
-            int Val = 0;
+            return a[row, col];
+        }
+
+        public double getPieceEvaluation(ChessSquare[,] board, int row, int col)
+        {
+            if (board[row, col] == null)
+            {
+                return 0;
+            }
+            if (board[row, col].Chess.IsPawn == true) //pawn
+            {
+                return 10 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.PawnWhite, row, col) : PieceEvaluation(Common.PawnBlack, row, col));
+            }
+            else if(board[row, col].Chess.IsCastle == true) //Castle
+            {
+                return 50 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.CastleWhite, row, col) : PieceEvaluation(Common.CastleBlack, row, col));
+            }
+            else if (board[row, col].Chess.IsKnight == true) //Knight
+            {
+                return 30 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.KnightWhite, row, col) : PieceEvaluation(Common.KnightBlack, row, col));
+            }
+            else if (board[row, col].Chess.IsBishop == true) //Bishop
+            {
+                return 30 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.BishopWhite, row, col) : PieceEvaluation(Common.BishopBlack, row, col));
+            }
+            else if (board[row, col].Chess.IsQueen == true) //Queen
+            {
+                return 90 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.QueenWhite, row, col) : PieceEvaluation(Common.QueenBlack, row, col));
+            }
+            else //if (board[row, col].Chess.IsKing == true) //King
+            {
+                return 900 + ((board[row, col].Chess.Evaluation > 0) ? PieceEvaluation(Common.KingWhite, row, col) : PieceEvaluation(Common.KingBlack, row, col));
+            }
+        }
+        public double BestValue(ChessSquare[,] board)
+        {
+            double Val = 0;
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     if (board[i, j].Chess != null)
                     {
-                        Val += board[i, j].Chess.Evaluation;
+                        Val = Val + ((board[i, j].Chess.Evaluation > 0) ? getPieceEvaluation(board, i, j): -getPieceEvaluation(board, i, j));
                     }
                 }
             }
@@ -576,3 +585,4 @@ namespace ChessKing
         }
     }
 }
+ 

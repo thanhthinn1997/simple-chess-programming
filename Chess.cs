@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,6 +81,57 @@ namespace ChessKing
             }
         }
 
+        protected bool isBishop = false;
+        public bool IsBishop
+        {
+            get 
+            {
+                return isBishop;
+            }
+            set
+            {
+                isBishop = value;
+            }
+        }
+        protected bool isCastle = false;
+        public bool IsCastle
+        {
+            get
+            {
+                return isCastle;
+            }
+            set
+            {
+                isCastle = value;
+            }
+        }
+        protected bool isKnight = false;
+        public bool IsKnight
+        {
+            get
+            {
+                return isKnight;
+            }
+            set
+            {
+                isKnight = value;
+            }
+        }
+
+        protected bool isQueen = false;
+        public bool IsQueen
+        {
+            get
+            {
+                return isQueen;
+            }
+            set
+            {
+                isQueen = value;
+            }
+        }
+
+
         private int evaluation;
         public int Evaluation
         {
@@ -93,6 +144,7 @@ namespace ChessKing
                 evaluation = value;
             }
         }
+        //private double[,] pieceevaluation;
 
         public virtual void FindWay(ChessSquare[,] board, int row, int col)
 		{

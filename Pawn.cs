@@ -10,7 +10,7 @@ namespace ChessKing
 	class Pawn : Chess
 	{
         string linkPoint = "Image\\circle.png";
-
+       
         public Pawn()
         {
             this.isPawn = true;

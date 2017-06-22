@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -224,26 +224,6 @@ namespace ChessKing
 			Board[7, 4].Image = Image.FromFile(linkWhiteKing);
 			Board[7, 4].Chess.Evaluation = 900;
 
-			//if (Common.CheckPromote == true)
-			//{
-			//	tempChess = new Queen();
-			//	if (Board[Common.RowSelected, Common.ColSelected].Chess.Team == 1) //white
-			//	{
-			//		tempChess.Team = (int)ColorTeam.White;
-			//		Board[Common.RowProQueen, Common.ColProQueen].Chess = tempChess;
-			//		Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkWhiteQueen);
-			//		Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = 90;
-			//	}
-			//	else //black
-			//	{
-			//		tempChess.Team = (int)ColorTeam.Black;
-			//		Board[Common.RowProQueen, Common.ColProQueen].Chess = tempChess;
-			//		Board[Common.RowProQueen, Common.ColProQueen].Image = Image.FromFile(linkBlackQueen);
-			//		Board[Common.RowProQueen, Common.ColProQueen].Chess.Evaluation = -90;
-			//	}
-			//	Common.CheckPromote = false;
-			//}
-
 			Common.Board = Board;
 		}
 
@@ -258,11 +238,61 @@ namespace ChessKing
 		{
 			Display();
 			Common.IsMode = false;
+			btn2Player.Enabled = true;
 		}
 
 		private void bntQuit_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form2 frmAbout = new Form2();
+			frmAbout.ShowDialog();
+		}
+		/// <summary>
+		/// lua chon do sau cho minimax
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void toolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 1;
+		}
+
+		private void toolStripMenuItem3_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 2;
+		}
+
+		private void toolStripMenuItem4_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 3;
+		}
+
+		private void toolStripMenuItem5_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 4;
+		}
+
+		private void toolStripMenuItem6_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 5;
+		}
+
+		private void onlineToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string url = "http://www.wikihow.com/Play-Chess";
+
+			System.Diagnostics.Process.Start(url);
+		}
+
+		private void offlineToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form3 frmHelp = new Form3();
+			frmHelp.ShowDialog();
+		}
 	}
 }
+
