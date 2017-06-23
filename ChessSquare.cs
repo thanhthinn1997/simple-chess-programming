@@ -391,15 +391,20 @@ namespace ChessKing
                     else
                     { }
 
-                    for (int k = 0; k < Common.CanMove.Count; k++)
-                    {
-                        if (Common.CanMove[k].Chess == null) Common.CanMove[k].Image = null;
-                    }
+                    for(int i = 0; i < 8; i++)
+                        for(int j = 0; j < 8; j++)
+                        {
+                            if (Common.Board[i, j].Chess == null) Common.Board[i, j].Image = null;
+                        }
 
                     Common.CanEat.Clear();
                     Common.CanMove.Clear();
 
                     BackChessBoard();
+                    if(Kingtemp.Chess != null && Kingtemp.Chess.IsKing == true)
+                    {
+                        Common.Board[Kingtemp.Col, Kingtemp.Row].BackColor = Color.BlueViolet;
+                    }
 
                 }
 				else //not inside caneat list
@@ -455,10 +460,8 @@ namespace ChessKing
                             {
                                 if (Common.CanMove[k].Chess.IsKing == true)
                                 {
-                                    //BackChessBoard();
-                                    Common.CanMove[k].BackColor = Color.Blue;
                                     temp = true;
-                                    KingTemp = Common.CanMove[k];
+                                    KingTemp = new ChessSquare(Common.CanMove[k]);
                                 }
                                 else
                                 { }
@@ -482,7 +485,7 @@ namespace ChessKing
                 {
                     if (Common.Board[i, j].Chess != null)
                     {
-                        if (Common.Board[i, j].Chess.Team != temp.Chess.Team && Common.Board[i, j].BackColor != Color.Red)
+                        if (Common.Board[i, j].Chess.Team != temp.Chess.Team)
                         {
                             Common.Board[i, j].Chess.FindWay(Common.Board, Common.Board[i, j].Row, Common.Board[i, j].Col);
                             for (int k = 0; k < Common.CanMove.Count; k++)
@@ -493,7 +496,6 @@ namespace ChessKing
                                 }
                                 Common.CanEat.Add(Common.CanMove[k]);
                             }
-
                             Common.CanMove.Clear();
                         }
                     }
@@ -505,13 +507,54 @@ namespace ChessKing
 
             temp.Chess.FindWay(Common.Board, temp.Row, temp.Col);
 
-            for (int i = 0; i < Common.CanMove.Count; i++)
+            for(int i = 0; i < Common.CanMove.Count; i++)
             {
-                if (Common.CanMove[i].Chess == null)
+                if (Common.CanMove[i].Chess == null) Common.CanMove[i].Image = null;
+            }
+
+            if(Common.CanMove.Count == 1)
+            {
+                if(Common.CanEat.Contains(Common.CanMove[Common.CanMove.Count - 1]))
                 {
-                    Common.CanMove[i].Image = null;
+                    ChessSquare temp2 = new ChessSquare(Common.CanMove[Common.CanMove.Count - 1]);
+                    Common.CanMove.Clear();
+
+                    for (int i = 0; i < 8; i++)
+                        for (int j = 0; j < 8; j++)
+                        {
+                            if (Common.Board[i, j].Chess != null)
+                            {
+                                if (Common.Board[i, j].Chess.Team == temp.Chess.Team)
+                                {
+                                    Common.Board[i, j].Chess.FindWay(Common.Board, Common.Board[i, j].Row, Common.Board[i, j].Col);
+                                    for (int k = 0; k < Common.CanMove.Count; k++)
+                                    {
+                                        if (Common.CanMove[k].Chess == null)
+                                        {
+                                            Common.CanMove[k].Image = null;
+                                        }
+                                        if (Common.CanMove[k].Col == temp2.Col && Common.CanMove[k].Row == temp2.Row)
+                                        {
+                                            checkmate = false;
+                                            break;
+                                        }
+                                    }
+                                    Common.CanMove.Clear();
+                                }
+                            }
+                            else
+                            {
+                            }
+                        }
                 }
-                if (!Common.CanEat.Contains(Common.CanMove[i])) checkmate = false;
+            }
+            else
+            {
+                while (Common.CanMove.Count > 0)
+                {
+                    if (!Common.CanEat.Contains(Common.CanMove[Common.CanMove.Count - 1])) checkmate = false;
+                    Common.CanMove.Remove(Common.CanMove[Common.CanMove.Count - 1]);
+                }
             }
 
             if(checkmate == true)
