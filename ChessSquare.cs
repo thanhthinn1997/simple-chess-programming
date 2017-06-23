@@ -223,8 +223,6 @@ namespace ChessKing
 			avalBoard.Clear();
 		}
 
-		List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
-
 		protected double minimax(int depth, ChessSquare[,] root, double alpha, double beta, bool isMax)
 		{
 
@@ -237,6 +235,7 @@ namespace ChessKing
 			else team = 1;                 //white
 
 			//ke list can move from root
+            List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
 			createList(root, team, tempList);
 			if (team == 2)
 			{
@@ -367,16 +366,16 @@ namespace ChessKing
 					Common.IsTurn++; //change turn
 					Common.CanMove.Clear();
 
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (Common.Board[0, j].Chess != null && Common.Board[0, j].Chess.IsPawn) phongHau(ref Common.Board[0, j]);
+                        if (Common.Board[7, j].Chess != null && Common.Board[7, j].Chess.IsPawn) phongHau(ref Common.Board[7, j]);
+                    }
+
                     if(Common.IsMode == false && Common.IsTurn % 2 == 1)
                     {
                         this.minimaxRoot();
                         this.BackChessBoard();
-                    }
-
-                    for(int j = 0; j < 8; j++)
-                    {
-                        if (Common.Board[0, j].Chess != null && Common.Board[0, j].Chess.IsPawn) phongHau(ref Common.Board[0, j]);
-                        if (Common.Board[7, j].Chess != null && Common.Board[7, j].Chess.IsPawn) phongHau(ref Common.Board[7, j]);
                     }
 
                     bool CheckKing = false;

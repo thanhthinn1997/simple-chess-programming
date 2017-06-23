@@ -74,3 +74,15 @@ D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Form2.resources
 D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Form3.resources
 D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Properties.Resources.resources
 D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\Help\HD.pdf
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.exe.config
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.exe
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.pdb
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.frmChessKing.resources
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Form2.resources
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Form3.resources
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Properties.Resources.resources
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.exe
+K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.pdb

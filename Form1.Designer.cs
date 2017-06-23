@@ -56,7 +56,7 @@
             this.btn2Player.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2Player.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn2Player.Location = new System.Drawing.Point(663, 283);
+            this.btn2Player.Location = new System.Drawing.Point(683, 271);
             this.btn2Player.Name = "btn2Player";
             this.btn2Player.Size = new System.Drawing.Size(75, 25);
             this.btn2Player.TabIndex = 0;
@@ -71,7 +71,7 @@
             this.bnt1Player.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bnt1Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnt1Player.ForeColor = System.Drawing.Color.Black;
-            this.bnt1Player.Location = new System.Drawing.Point(663, 327);
+            this.bnt1Player.Location = new System.Drawing.Point(683, 311);
             this.bnt1Player.Name = "bnt1Player";
             this.bnt1Player.Size = new System.Drawing.Size(75, 23);
             this.bnt1Player.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.bntQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bntQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntQuit.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.bntQuit.Location = new System.Drawing.Point(663, 371);
+            this.bntQuit.Location = new System.Drawing.Point(683, 351);
             this.bntQuit.Name = "bntQuit";
             this.bntQuit.Size = new System.Drawing.Size(75, 23);
             this.bntQuit.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.depthToolStripMenuItem.Name = "depthToolStripMenuItem";
-            this.depthToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.depthToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.depthToolStripMenuItem.Text = "Depth";
             // 
             // toolStripMenuItem2
@@ -179,20 +179,20 @@
             // onlineToolStripMenuItem
             // 
             this.onlineToolStripMenuItem.Name = "onlineToolStripMenuItem";
-            this.onlineToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.onlineToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.onlineToolStripMenuItem.Text = "Online";
             this.onlineToolStripMenuItem.Click += new System.EventHandler(this.onlineToolStripMenuItem_Click);
-			//// 
-			//// offlineToolStripMenuItem
-			//// 
-			this.offlineToolStripMenuItem.Name = "offlineToolStripMenuItem";
-			this.offlineToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-			this.offlineToolStripMenuItem.Text = "Offline";
-			this.offlineToolStripMenuItem.Click += new System.EventHandler(this.offlineToolStripMenuItem_Click);
-			// 
-			// aboutToolStripMenuItem
-			// 
-			this.aboutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // offlineToolStripMenuItem
+            // 
+            this.offlineToolStripMenuItem.Name = "offlineToolStripMenuItem";
+            this.offlineToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.offlineToolStripMenuItem.Text = "Offline";
+            this.offlineToolStripMenuItem.Click += new System.EventHandler(this.offlineToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
@@ -205,7 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::ChessKing.Properties.Resources.B1;
-            this.ClientSize = new System.Drawing.Size(780, 557);
+            this.ClientSize = new System.Drawing.Size(780, 569);
             this.Controls.Add(this.bntQuit);
             this.Controls.Add(this.bnt1Player);
             this.Controls.Add(this.btn2Player);
