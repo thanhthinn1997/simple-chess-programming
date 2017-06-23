@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace ChessKing
 {
@@ -19,10 +20,8 @@ namespace ChessKing
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
-			System.Diagnostics.Process.Start("Image\\HD.pdf");
+			Process.Start("Help\\HD.pdf");
 			this.Close();
 		}
-
-
 	}
 }

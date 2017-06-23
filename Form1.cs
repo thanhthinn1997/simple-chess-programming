@@ -54,22 +54,22 @@ namespace ChessKing
 					{
 						if (col % 2 == 0)
 						{
-							temp.BackColor = Color.NavajoWhite;
+							temp.BackColor = Color.LavenderBlush;
 						}
 						else
 						{
-							temp.BackColor = Color.SaddleBrown;
+							temp.BackColor = Color.DarkSlateGray;
 						}
 					}
 					else
 					{
 						if (col % 2 == 0)
 						{
-							temp.BackColor = Color.SaddleBrown;
+							temp.BackColor = Color.DarkSlateGray;
 						}
 						else
 						{
-							temp.BackColor = Color.NavajoWhite;
+							temp.BackColor = Color.LavenderBlush;
 						}
 					}
 

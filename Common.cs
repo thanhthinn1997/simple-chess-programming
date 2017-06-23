@@ -23,7 +23,7 @@ namespace ChessKing
 		static public int RowProQueen = -1;
 		static public int ColProQueen = -1;
 
-		static public int Depth = 1;
+		static public int Depth = 3;
 
 		static public double[,] PawnWhite =
 	  {

@@ -88,22 +88,22 @@ namespace ChessKing
                         {
                             if (col % 2 == 0)
                             {
-                                Common.Board[row, col].BackColor = Color.NavajoWhite;
+                                Common.Board[row, col].BackColor = Color.LavenderBlush;
                             }
                             else
                             {
-                                Common.Board[row, col].BackColor = Color.SaddleBrown;
+                                Common.Board[row, col].BackColor = Color.DarkSlateGray;
                             }
                         }
                         else
                         {
                             if (col % 2 == 0)
                             {
-                                Common.Board[row, col].BackColor = Color.SaddleBrown;
+                                Common.Board[row, col].BackColor = Color.DarkSlateGray;
                             }
                             else
                             {
-                                Common.Board[row, col].BackColor = Color.NavajoWhite;
+                                Common.Board[row, col].BackColor = Color.LavenderBlush;
                             }
                         }
                     }
