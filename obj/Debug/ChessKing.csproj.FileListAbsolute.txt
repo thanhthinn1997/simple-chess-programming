@@ -1,100 +1,137 @@
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.exe.config
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\bin\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.frmChessKing.resources
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.Properties.Resources.resources
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\Game\ChessKing\ChessKing\obj\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\Interop.AcroPDFLib.dll
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\AxInterop.AcroPDFLib.dll
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.csproj.ResolveComReference.cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.frmChessKing.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.Form2.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.Form3.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.Properties.Resources.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\obj\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\bin\Debug\ChessKing.exe.config
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\bin\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\bin\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\bin\Debug\Interop.AcroPDFLib.dll
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7\bin\Debug\AxInterop.AcroPDFLib.dll
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\bin\Debug\ChessKing.exe.config
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.csproj.ResolveComReference.cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\bin\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\bin\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.frmChessKing.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.Form2.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.Properties.Resources.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.csproj.ResolveComReference.cache
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.frmChessKing.resources
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.Form2.resources
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.Form3.resources
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.Properties.Resources.resources
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.exe
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\ChessKing.pdb
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\bin\Debug\ChessKing.exe.config
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\bin\Debug\ChessKing.exe
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\bin\Debug\ChessKing.pdb
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\bin\Debug\Interop.AcroPDFLib.dll
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\bin\Debug\AxInterop.AcroPDFLib.dll
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\Interop.AcroPDFLib.dll
-C:\Users\thao le\Downloads\simple-chess-programming-edit10\obj\Debug\AxInterop.AcroPDFLib.dll
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\simple-chess-programming-edit10\obj\Debug\ChessKing.Form3.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.frmChessKing.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.Form2.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.Form3.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.Properties.Resources.resources
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\bin\Debug\ChessKing.exe.config
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\bin\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\bin\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.exe
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\obj\Debug\ChessKing.pdb
-C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\simple-chess-programming-edit10\bin\Debug\Help\HD.pdf
-D:\Other Key\Downloads\edit10\edit10\bin\Debug\ChessKing.exe.config
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.exe
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.pdb
-D:\Other Key\Downloads\edit10\edit10\bin\Debug\Help\HD.pdf
-D:\Other Key\Downloads\edit10\edit10\bin\Debug\ChessKing.exe
-D:\Other Key\Downloads\edit10\edit10\bin\Debug\ChessKing.pdb
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.frmChessKing.resources
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Form2.resources
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Form3.resources
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.Properties.Resources.resources
-D:\Other Key\Downloads\edit10\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\Help\HD.pdf
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.exe.config
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.exe
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\bin\Debug\ChessKing.pdb
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.frmChessKing.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Form2.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Form3.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.Properties.Resources.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.exe
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\edit10\obj\Debug\ChessKing.pdb
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\bin\Debug\Help\HD.pdf
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\bin\Debug\ChessKing.exe.config
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\bin\Debug\ChessKing.exe
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\bin\Debug\ChessKing.pdb
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.frmChessKing.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.Form2.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.Form3.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.Properties.Resources.resources
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.csproj.GenerateResource.Cache
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.exe
-K:\Work\ChessKing-20170510T035042Z-001\simple-chess-programming\simple-chess-programming\obj\Debug\ChessKing.pdb
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/bin/Debug/ChessKing.exe.config
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/bin/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/bin/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.frmChessKing.resources
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.Properties.Resources.resources
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/Game/ChessKing/ChessKing/obj/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/Interop.AcroPDFLib.dll
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/AxInterop.AcroPDFLib.dll
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.csproj.ResolveComReference.cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.frmChessKing.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.Form2.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.Form3.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.Properties.Resources.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/obj/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/bin/Debug/ChessKing.exe.config
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/bin/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/bin/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/bin/Debug/Interop.AcroPDFLib.dll
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-9d7c71edc92ea9a5b54b34df80ac8ea0621f1cd7/bin/Debug/AxInterop.AcroPDFLib.dll
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/bin/Debug/ChessKing.exe.config
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.csproj.ResolveComReference.cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/bin/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/bin/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.frmChessKing.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.Form2.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.Properties.Resources.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.csproj.ResolveComReference.cache
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.frmChessKing.resources
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.Form2.resources
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.Form3.resources
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.Properties.Resources.resources
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.exe
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/ChessKing.pdb
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/bin/Debug/ChessKing.exe.config
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/bin/Debug/ChessKing.exe
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/bin/Debug/ChessKing.pdb
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/bin/Debug/Interop.AcroPDFLib.dll
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/bin/Debug/AxInterop.AcroPDFLib.dll
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/Interop.AcroPDFLib.dll
+C:/Users/thao le/Downloads/simple-chess-programming-edit10/obj/Debug/AxInterop.AcroPDFLib.dll
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/Đồ án/simple-chess-programming-edit10/obj/Debug/ChessKing.Form3.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.frmChessKing.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.Form2.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.Form3.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.Properties.Resources.resources
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/bin/Debug/ChessKing.exe.config
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/bin/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/bin/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.exe
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/obj/Debug/ChessKing.pdb
+C:/Users/ABC/Desktop/HKII/Trí Tuệ Nhân Tạo/Cô Thương/simple-chess-programming-edit10/bin/Debug/Help/HD.pdf
+D:/Other Key/Downloads/edit10/edit10/bin/Debug/ChessKing.exe.config
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.exe
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.pdb
+D:/Other Key/Downloads/edit10/edit10/bin/Debug/Help/HD.pdf
+D:/Other Key/Downloads/edit10/edit10/bin/Debug/ChessKing.exe
+D:/Other Key/Downloads/edit10/edit10/bin/Debug/ChessKing.pdb
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.frmChessKing.resources
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.Form2.resources
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.Form3.resources
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.Properties.Resources.resources
+D:/Other Key/Downloads/edit10/edit10/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+/Users/thaole/Desktop/edit10/edit10/bin/Debug/Help/HD.pdf
+/Users/thaole/Desktop/edit10/edit10/bin/Debug/ChessKing.exe.config
+/Users/thaole/Desktop/edit10/edit10/bin/Debug/ChessKing.exe
+/Users/thaole/Desktop/edit10/edit10/bin/Debug/ChessKing.pdb
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.csprojResolveAssemblyReference.cache
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.frmChessKing.resources
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.Form2.resources
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.Form3.resources
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.Properties.Resources.resources
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.csproj.GenerateResource.Cache
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.csproj.CoreCompileInputs.cache
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.exe
+/Users/thaole/Desktop/edit10/edit10/obj/Debug/ChessKing.pdb
+C:\Users\thao le\Downloads\edit10\bin\Debug\Help\HD.pdf
+C:\Users\thao le\Downloads\edit10\bin\Debug\ChessKing.exe.config
+C:\Users\thao le\Downloads\edit10\bin\Debug\ChessKing.exe
+C:\Users\thao le\Downloads\edit10\bin\Debug\ChessKing.pdb
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.frmChessKing.resources
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.Form2.resources
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.Form3.resources
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.Properties.Resources.resources
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.exe
+C:\Users\thao le\Downloads\edit10\obj\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\bin\Debug\ChessKing.exe.config
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\bin\Debug\Help\HD.pdf
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\bin\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\bin\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.frmChessKing.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.Form2.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.Form3.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.Properties.Resources.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\edit10\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\bin\Debug\ChessKing.exe.config
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\bin\Debug\Help\HD.pdf
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\bin\Debug\ChessKing.exe
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\bin\Debug\ChessKing.pdb
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.frmChessKing.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.Form2.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.Form3.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.Properties.Resources.resources
+C:\Users\ABC\Desktop\HKII\Trí Tuệ Nhân Tạo\Cô Thương\Đồ án\master01\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+K:\Work\master01\master01\bin\Debug\Help\HD.pdf
+K:\Work\master01\master01\bin\Debug\ChessKing.exe.config
+K:\Work\master01\master01\bin\Debug\ChessKing.exe
+K:\Work\master01\master01\bin\Debug\ChessKing.pdb
+K:\Work\master01\master01\obj\Debug\ChessKing.csprojResolveAssemblyReference.cache
+K:\Work\master01\master01\obj\Debug\ChessKing.frmChessKing.resources
+K:\Work\master01\master01\obj\Debug\ChessKing.Form2.resources
+K:\Work\master01\master01\obj\Debug\ChessKing.Form3.resources
+K:\Work\master01\master01\obj\Debug\ChessKing.Properties.Resources.resources
+K:\Work\master01\master01\obj\Debug\ChessKing.csproj.GenerateResource.Cache
+K:\Work\master01\master01\obj\Debug\ChessKing.exe
+K:\Work\master01\master01\obj\Debug\ChessKing.pdb

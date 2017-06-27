@@ -8,6 +8,7 @@ namespace ChessKing
 		static public bool IsMode = false;
 		static public bool IsSelectedSquare = false; //selected yet
 		static public int IsTurn = 0;
+		static public bool IsEvaluation = true;
 
 		static public ChessSquare[,] Board;// = new ChessSquare[8, 8];
 
@@ -23,7 +24,7 @@ namespace ChessKing
 		static public int RowProQueen = -1;
 		static public int ColProQueen = -1;
 
-        static public int Depth = 3;
+		static public int Depth = 3;
 
 		static public double[,] PawnWhite =
 	  {
