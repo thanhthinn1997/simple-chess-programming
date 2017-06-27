@@ -418,7 +418,25 @@ namespace ChessKing
 						if (Common.Board[7, j].Chess != null && Common.Board[7, j].Chess.IsPawn) phongHau(ref Common.Board[7, j]);
 					}
 
-					if (Common.IsMode == false && Common.IsTurn % 2 == 1)
+                    int tempKing = 0;
+                    int color = 0;
+
+                    for (int i = 0; i < 8; i++)
+                        for (int j = 0; j < 8; j++)
+                        {
+                            if (Common.Board[i, j].Chess == null) Common.Board[i, j].Image = null;
+                            else if (Common.Board[i, j].Chess.IsKing) { tempKing++; color = Common.Board[i, j].Chess.Team; }
+                        }
+
+                    if (tempKing == 1)
+                    {
+                        if (color == 1) MessageBox.Show("The White Wins!");
+                        else MessageBox.Show("The Black Wins!");
+                    }
+                    else
+                    { }
+
+                    if (Common.IsMode == false && Common.IsTurn % 2 == 1)
 					{
 						this.minimaxRoot();
 						this.BackChessBoard();
@@ -437,23 +455,26 @@ namespace ChessKing
 					else
 					{ }
 
-                    int tempKing = 0;
-                    int color = 0;
-
-					for (int i = 0; i < 8; i++)
-						for (int j = 0; j < 8; j++)
-						{
-                            if (Common.Board[i, j].Chess == null) Common.Board[i, j].Image = null;
-                            else if (Common.Board[i, j].Chess.IsKing) { tempKing++; color = Common.Board[i, j].Chess.Team; }
-						}
-
-                    if(tempKing == 1)
+                    if(Common.IsMode == false && Common.IsTurn % 2 == 1)
                     {
-                        if (color == 1) MessageBox.Show("The White Wins!");
-                        else MessageBox.Show("The Black Wins!");
+                        tempKing = 0;
+                        color = 0;
+
+                        for (int i = 0; i < 8; i++)
+                            for (int j = 0; j < 8; j++)
+                            {
+                                if (Common.Board[i, j].Chess == null) Common.Board[i, j].Image = null;
+                                else if (Common.Board[i, j].Chess.IsKing) { tempKing++; color = Common.Board[i, j].Chess.Team; }
+                            }
+
+                        if (tempKing == 1)
+                        {
+                            if (color == 1) MessageBox.Show("The White Wins!");
+                            else MessageBox.Show("The Black Wins!");
+                        }
+                        else
+                        { }
                     }
-                    else
-                    { }
 
 					Common.CanEat.Clear();
 					Common.CanMove.Clear();
