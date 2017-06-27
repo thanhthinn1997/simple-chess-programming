@@ -20,9 +20,6 @@ namespace ChessKing
 			Col = a.Col;
 		}
 
-        ~ChessSquare()
-        { }
-
 		public FindWayAction findWayAction;
 		enum ColorTeam
 		{
@@ -192,137 +189,177 @@ namespace ChessKing
 			}
 		}
 
-		protected void minimaxRoot()
-		{
-			int depth = Common.Depth;
-			double valueint = -9999;
-			double value = 0;
-			double alpha = -10000, beta = 10000;
-			bool isMax = true;
-			ChessSquare[,] temp = new ChessSquare[8, 8];
-			ChessSquare[,] bestMove = new ChessSquare[8, 8];
-			ChessSquare[,] a = new ChessSquare[8, 8];
-			temp = Common.Board;
-			this.createList(temp, 2, avalBoard);
-			for (int i = 0; i < avalBoard.Count; i++)
-			{
-				//Copy(ref a,  ref avalBoard[i]);
-				a = avalBoard[i];
-				value = minimax(depth - 1, a, alpha, beta, !isMax);
-				if (value >= valueint)
-				{
-					bestMove = a;
-					valueint = value;
-				}
-			}
-            avalBoard.Clear();
+        protected void Undo(ref ChessSquare[,] temp, int befRow, int befCol, Chess tempChess, Image tempImage)
+        {
+            temp[befRow, befCol].Chess = temp[this.Row, this.Col].Chess;
+            temp[befRow, befCol].Image = temp[this.Row, this.Col].Image;
+            temp[this.Row, this.Col].Chess = tempChess;
+            temp[this.Row, this.Col].Image = tempImage;
+        }
+
+        protected void minimaxRoot()
+        {
+            int depth = Common.Depth;
+            double valueint = -9999;
+            double value = 0;
+            double alpha = -10000, beta = 10000;
+            bool isMax = true;
+            ChessSquare[,] temp = new ChessSquare[8, 8];
+            ChessSquare[,] bestMove = new ChessSquare[8, 8];
+            ChessSquare[,] a = new ChessSquare[8, 8];
+            temp = Common.Board;
+            //this.createList(temp, 2, avalBoard);
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (temp[i, j].Chess != null && temp[i, j].Chess.Team == (int)ColorTeam.Black)
+                    {
+                        List<ChessSquare> RootTemp = new List<ChessSquare>();
+
+                        int befRow = i;
+                        int befCol = j;
+                        temp[i, j].Chess.FindWay(temp, i, j);
+
+                        for (int k = 0; k < Common.CanMove.Count; k++)
+                        {
+                            RootTemp.Add(Common.CanMove[k]);
+                        }
+                        Common.CanMove.Clear();
+
+                        Chess tempChess = new Chess();
+                        Image tempImage = null;
+
+                        for (int k = 0; k < RootTemp.Count; k++)
+                        {
+                            tempChess = temp[RootTemp[k].Row, RootTemp[k].Col].Chess;
+                            tempImage = temp[RootTemp[k].Row, RootTemp[k].Col].Image;
+
+                            temp[RootTemp[k].Row, RootTemp[k].Col].Chess = temp[befRow, befCol].Chess;
+                            temp[RootTemp[k].Row, RootTemp[k].Col].Image = temp[befRow, befCol].Image;
+                            temp[befRow, befCol].Chess = null;
+                            temp[befRow, befCol].Image = null;
+
+                            value = minimax(depth - 1, ref temp, alpha, beta, !isMax);
+                            if (value >= valueint)
+                            {
+                                for(int m = 0; m < 8; m++)
+                                {
+                                    for(int n = 0; n < 8; n++)
+                                    {
+                                        bestMove[m, n] = new ChessSquare(temp[m, n]);
+                                    }
+                                }
+                                //bestMove = temp;
+                                valueint = value;
+                            }
+                            temp[RootTemp[k].Row, RootTemp[k].Col].Undo(ref temp, befRow, befCol, tempChess, tempImage);
+                        }
+                        RootTemp.Clear();
+                    }
+
+                }
+            }
 
             for (int k = 0; k < 8; k++)
-			{
-				for (int l = 0; l < 8; l++)
-				{
-					Common.Board[k, l].Chess = bestMove[k, l].Chess;
-					Common.Board[k, l].Image = bestMove[k, l].Image;
-				}
-			}
+            {
+                for (int l = 0; l < 8; l++)
+                {
+                    Common.Board[k, l].Row = bestMove[k, l].Row;
+                    Common.Board[k, l].Col = bestMove[k, l].Col;
+                    Common.Board[k, l].Chess = bestMove[k, l].Chess;
+                    Common.Board[k, l].Image = bestMove[k, l].Image;
+                }
+            }
 
-			Common.IsTurn++;
-		}
+            Common.IsTurn++;
+        }
 
-		protected double minimax(int depth, ChessSquare[,] root, double alpha, double beta, bool isMax)
-		{
+        protected double minimax(int depth, ref ChessSquare[,] root, double alpha, double beta, bool isMax)
+        {
 
-			if (depth == 0)
-				return -this.BestValue(root);
-			ChessSquare[,] a = new ChessSquare[8, 8];
+            if (depth == 0)
+                return -this.BestValue(root);
+            ChessSquare[,] a = new ChessSquare[8, 8];
 
-			int team = 0;
-			if (isMax == true) team = 2; //black
-			else team = 1;                 //white
+            double valueint;
 
-			//ke list can move from root
-			List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
-			createList(root, team, tempList);
-			if (team == 2)
-			{
-				double valueint = -9999;
-				for (int i = 0; i < tempList.Count; i++)
-				{
-					a = tempList[i];
-					valueint = Math.Max(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
-					alpha = Math.Max(alpha, valueint);
-					if (beta <= alpha)
-					{
-						tempList.Clear();
-						return valueint;
-					}
+            int team = 0;
+            if (isMax == true)
+            {
+                team = 2;
+                valueint = -9999;
+            } //black
+            else
+            {
+                team = 1;
+                valueint = 9999;
+            } //white
 
-				}
-				tempList.Clear();
-				return valueint;
-			}
-			else
-			{
-				double valueint = 9999;
-				for (int i = 0; i < tempList.Count; i++)
-				{
-					a = tempList[i];
-					valueint = Math.Min(valueint, minimax(depth - 1, a, alpha, beta, !isMax));
-					beta = Math.Min(beta, valueint);
-					if (beta <= alpha)
-					{
-						tempList.Clear();
-						return valueint;
-					}
-				}
-				tempList.Clear();
-				return valueint;
-			}
-		}
-		protected void createList(ChessSquare[,] temp, int team, List<ChessSquare[,]> listRoot)
-		{
-			//// ChessSquare[,] tempB = new ChessSquare[8, 8];
-			int tempRow, tempCol;
-			//tempB = (ChessSquare[,])temp.Clone();
-			for (int row = 0; row < 8; row++)
-			{
-				for (int col = 0; col < 8; col++)
-				{
+            //ke list can move from root
+            //List<ChessSquare[,]> tempList = new List<ChessSquare[,]>();
+            //createList(root, team, tempList);
 
-					if (temp[row, col].Chess != null)
-					{
-						if (temp[row, col].Chess.Team == team)
-						{
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (root[i, j].Chess != null && root[i, j].Chess.Team == team)
+                    {
+                        List<ChessSquare> RootTemp = new List<ChessSquare>();
 
-							temp[row, col].Chess.FindWay(temp, row, col);
+                        int befRow = i;
+                        int befCol = j;
+                        root[i, j].Chess.FindWay(root, i, j);
 
-							if (Common.CanMove.Count != 0)
-							{
-								for (int i = 0; i < Common.CanMove.Count; i++)
-								{
-									ChessSquare[,] tempA = new ChessSquare[8, 8];
-									Copy(ref temp, ref tempA);
-									tempRow = Common.CanMove[i].row;
-									tempCol = Common.CanMove[i].col;
-									tempA[tempRow, tempCol].Image = tempA[row, col].Image;
-									tempA[tempRow, tempCol].Chess = tempA[row, col].Chess;
-									tempA[row, col].Image = null;
-									tempA[row, col].Chess = null;
+                        for (int k = 0; k < Common.CanMove.Count; k++)
+                        {
+                            RootTemp.Add(Common.CanMove[k]);
+                        }
+                        Common.CanMove.Clear();
 
-									listRoot.Add(tempA);
-								}
-								Common.CanMove.Clear();
-							}
-						}
-					}
-					/* else
-					 {
-						 Copy(ref temp, ref tempA);
+                        Chess tempChess = new Chess();
+                        Image tempImage = null;
 
-					 }*/
-				}
-			}
-		}
+                        for (int k = 0; k < RootTemp.Count; k++)
+                        {
+                            tempChess = root[RootTemp[k].Row, RootTemp[k].Col].Chess;
+                            tempImage = root[RootTemp[k].Row, RootTemp[k].Col].Image;
+
+                            root[RootTemp[k].Row, RootTemp[k].Col].Chess = root[befRow, befCol].Chess;
+                            root[RootTemp[k].Row, RootTemp[k].Col].Image = root[befRow, befCol].Image;
+                            root[befRow, befCol].Chess = null;
+                            root[befRow, befCol].Image = null;
+
+                            if (team == 2)
+                            {
+                                valueint = Math.Max(valueint, minimax(depth - 1, ref root, alpha, beta, !isMax));
+                                alpha = Math.Max(alpha, valueint);
+                                if (beta <= alpha)
+                                {
+                                    root[RootTemp[k].Row, RootTemp[k].Col].Undo(ref root, befRow, befCol, tempChess, tempImage);
+                                    return valueint;
+                                }
+                            }
+                            else
+                            {
+                                valueint = Math.Min(valueint, minimax(depth - 1, ref root, alpha, beta, !isMax));
+                                beta = Math.Min(beta, valueint);
+                                if (beta <= alpha)
+                                {
+                                    root[RootTemp[k].Row, RootTemp[k].Col].Undo(ref root, befRow, befCol, tempChess, tempImage);
+                                    return valueint;
+                                }
+                            }
+                            root[RootTemp[k].Row, RootTemp[k].Col].Undo(ref root, befRow, befCol, tempChess, tempImage);
+                        }
+                        RootTemp.Clear();
+                    }
+                }
+            }    
+            return valueint;
+        }
+
 		protected void ChangeTurn()
 		{
 			//select yet
@@ -642,17 +679,6 @@ namespace ChessKing
 				}
 			}
 			return Val;
-		}
-		public void Copy(ref ChessSquare[,] src, ref ChessSquare[,] dst)
-		{
-			for (int k = 0; k < 8; k++)
-			{
-				for (int l = 0; l < 8; l++)
-				{
-					dst[k, l] = new ChessSquare(src[k, l]);
-					//dst[k, l] = Helper.DeepClone(src[k, l]);
-				}
-			}
 		}
 	}
 }
